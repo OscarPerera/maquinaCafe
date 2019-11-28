@@ -13,7 +13,5 @@ import java.util.ArrayList;
  */
 public class Reportes {
     
-    ArrayList<Orden> reporteOrdenes = new ArrayList<>();
-    
     
 }
