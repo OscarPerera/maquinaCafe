@@ -6,10 +6,11 @@
 package Vista;
 
 import Controlador.*;
-import Modelo.Orden;
+import Modelo.*;
 import java.awt.event.ActionListener;
 import javafx.scene.paint.Color;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +18,7 @@ import javax.swing.JComboBox;
  */
 public class Index extends javax.swing.JFrame {
     ControladorOrdenes controlador;
+  
     /**
      * Creates new form index
      */
@@ -203,6 +205,7 @@ public class Index extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel5.setText("Reporte de ingredientes: ");
 
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -337,10 +340,12 @@ public class Index extends javax.swing.JFrame {
 
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         // TODO add your handling code here:
+
         txtDineroIntroducido.setText("0.0");
         txtCostoOrden.setText("0.0");
         txtCafeSeleccionado.setText("");
     }//GEN-LAST:event_btnCancelarMouseClicked
+
 
     private void btnDiezPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiezPesosMouseClicked
         // TODO add your handling code here:
@@ -380,12 +385,22 @@ public class Index extends javax.swing.JFrame {
 
     private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
         // TODO add your handling code here:
+
         double dineroIngresado = Double.parseDouble(txtDineroIntroducido.getText());
         String tipoCafe = txtCafeSeleccionado.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado, tipoCafe, cucharadasAzucar);
     }//GEN-LAST:event_btnConfirmarMouseClicked
 
+    private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cafeSeleccionadotxtActionPerformed
+
+    private void limpiarPantalla(){
+        dineroIntroducidotxt.setText("0.0");
+        costoOrdentxt.setText("0.0");
+        cafeSeleccionadotxt.setText("");
+    }
     /**
      * @param args the command line arguments
      */

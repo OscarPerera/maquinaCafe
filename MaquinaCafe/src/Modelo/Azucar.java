@@ -11,8 +11,8 @@ package Modelo;
  */
 public class Azucar extends Ingrediente{
     
-    public Azucar(int cantidadInicial, int cantidadDisponible) {
-        super(cantidadInicial, cantidadDisponible);
+    public Azucar(int cantidadInicial) {
+        super(cantidadInicial);
     }
     
     public void agregarCucharadas(int cantidadDeCucharadas){

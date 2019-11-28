@@ -18,43 +18,59 @@ public class Cambio {
           
     public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, int Monedas10Pesos) {      
         this.MonedasPeso = MonedasPeso ;
-        this.MonedasPeso =  Monedas2Pesos;
-        this.MonedasPeso =  Monedas5Pesos ;
-        this.MonedasPeso =   Monedas10Pesos;    
+        this.Monedas2Pesos =  Monedas2Pesos;
+        this.Monedas5Pesos =  Monedas5Pesos ;
+        this.Monedas10Pesos =   Monedas10Pesos;    
     }
 
-    public int getMonedasPesoDisponibles() {
+    public int getMonedasPeso() {
         return MonedasPeso;
     }
     
-    public int getMonedas2PesosDisponibles() {
+    public int getMonedas2Pesos() {
         return Monedas2Pesos;
     }
 
-    public int getMonedas5PesosDisponibles() {
+    public int getMonedas5Pesos() {
         return Monedas5Pesos;
     }
 
-    public int getMonedas10PesosDisponibles() {
+    public int getMonedas10Pesos() {
         return Monedas10Pesos;
     }
-    
-    //Posiblemente varios inline method.
-    public int disminuirMonedasPeso(){
-        MonedasPeso = MonedasPeso - 1;
-        return MonedasPeso;
+
+    public void setMonedasPeso(int MonedasPeso) {
+        this.MonedasPeso = MonedasPeso;
     }
-     public int disminuirMonedas2Pesos(){
-        Monedas2Pesos = Monedas2Pesos - 1;
-        return Monedas2Pesos;
+
+    public void setMonedas2Pesos(int Monedas2Pesos) {
+        this.Monedas2Pesos = Monedas2Pesos;
     }
-     public int disminuirMonedas5Pesos(){
-        Monedas5Pesos = Monedas5Pesos - 1;
-        return Monedas5Pesos;
+
+    public void setMonedas5Pesos(int Monedas5Pesos) {
+        this.Monedas5Pesos = Monedas5Pesos;
     }
-     public int disminuirMonedas10Pesos(){
-       Monedas10Pesos = Monedas10Pesos - 1;
-       return Monedas10Pesos;
+
+    public void setMonedas10Pesos(int Monedas10Pesos) {
+        this.Monedas10Pesos = Monedas10Pesos;
     }
-    
+
+    @Override
+    public String toString() {
+        String respuesta = "";
+        if(MonedasPeso > 0){
+            respuesta = respuesta + "Monedas de 1 Peso: " + MonedasPeso + "\n";
+        }
+        if(Monedas2Pesos > 0){
+            respuesta = respuesta + "Monedas de 2 Pesos: " + Monedas2Pesos + "\n";
+        }
+        if(Monedas5Pesos > 0){
+            respuesta = respuesta + "Monedas de 5 Pesos: " + Monedas5Pesos + "\n";
+        }
+        if(Monedas10Pesos > 0){
+            respuesta = respuesta + "Monedas de 10 Pesos: " + Monedas10Pesos + "\n";
+        }
+        return respuesta;
+    }
+
 }
