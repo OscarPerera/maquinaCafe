@@ -23,7 +23,7 @@ public class Index extends javax.swing.JFrame {
     public Index() {
         initComponents();
         inicializarAzucarComboBox();
-        controlador = MainPrincipal.controladorOrdenes;
+        controlador = MainPrincipal.controlador;
     }
 
     private void inicializarAzucarComboBox(){

@@ -14,11 +14,11 @@ import Vista.Index;
  */
 public class MainPrincipal {
     
-    public static ControladorOrdenes controladorOrdenes;
+    public static ControladorOrdenes controlador;
     
     public static void main(String[] args) {
         Cambio cambio = new Cambio(10, 10, 10, 10);
-        controladorOrdenes = new ControladorOrdenes(cambio);
+        controlador = new ControladorOrdenes(cambio);
         Index index = new Index();
         index.setVisible(true);
     }
