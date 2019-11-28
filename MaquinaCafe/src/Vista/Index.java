@@ -10,6 +10,7 @@ import Modelo.Orden;
 import Modelo.ReporteOrdenes;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -349,7 +350,8 @@ public class Index extends javax.swing.JFrame {
         String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
-        
+        String respuestaOrden = controlador.nuevaOrden(nuevaOrden);
+        JOptionPane.showMessageDialog(null, respuestaOrden);
     }//GEN-LAST:event_confirmarbtnMouseClicked
 
     private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
