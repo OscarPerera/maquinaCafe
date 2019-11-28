@@ -11,76 +11,50 @@ package Modelo;
  */
 public class Cambio {
     
-    final int  MonedasPesoIniciales;
-    final int  Monedas2PesosIniciales;
-    final int  Monedas5PesosIniciales;
-    final int  Monedas10PesosIniciales;
-    int MonedasPesoDisponible;
-    int Monedas2PesosDisponible;
-    int Monedas5PesosDisponible;
-    int Monedas10PesosDisponible;
-        
+    int MonedasPeso;
+    int Monedas2Pesos;
+    int Monedas5Pesos;
+    int Monedas10Pesos;
+          
+    public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, int Monedas10Pesos) {      
+        this.MonedasPeso = MonedasPeso ;
+        this.MonedasPeso =  Monedas2Pesos;
+        this.MonedasPeso =  Monedas5Pesos ;
+        this.MonedasPeso =   Monedas10Pesos;    
+    }
+
+    public int getMonedasPesoDisponibles() {
+        return MonedasPeso;
+    }
     
-    public Cambio(int MonedasPesoIniciales, int Monedas2PesosIniciales, int Monedas5PesosIniciales, int Monedas10PesosIniciales) {
-        this.MonedasPesoIniciales = MonedasPesoIniciales;
-        this.Monedas2PesosIniciales = Monedas2PesosIniciales;
-        this.Monedas5PesosIniciales = Monedas5PesosIniciales;
-        this.Monedas10PesosIniciales = Monedas10PesosIniciales;
-        
-         this.MonedasPesoDisponible = MonedasPesoIniciales ;
-         this.MonedasPesoDisponible =  Monedas2PesosIniciales;
-         this.MonedasPesoDisponible =  Monedas5PesosIniciales ;
-         this.MonedasPesoDisponible =   Monedas10PesosIniciales;
-        
+    public int getMonedas2PesosDisponibles() {
+        return Monedas2Pesos;
     }
 
-    public int getMonedasPesoDisponible() {
-        return MonedasPesoDisponible;
+    public int getMonedas5PesosDisponibles() {
+        return Monedas5Pesos;
     }
 
-    public void setMonedasPesoDisponible(int MonedasPesoDisponible) {
-        this.MonedasPesoDisponible = MonedasPesoDisponible;
+    public int getMonedas10PesosDisponibles() {
+        return Monedas10Pesos;
     }
-
-    public int getMonedas2PesosDisponible() {
-        return Monedas2PesosDisponible;
-    }
-
-    public void setMonedas2PesosDisponible(int Monedas2PesosDisponible) {
-        this.Monedas2PesosDisponible = Monedas2PesosDisponible;
-    }
-
-    public int getMonedas5PesosDisponible() {
-        return Monedas5PesosDisponible;
-    }
-
-    public void setMonedas5PesosDisponible(int Monedas5PesosDisponible) {
-        this.Monedas5PesosDisponible = Monedas5PesosDisponible;
-    }
-
-    public int getMonedas10PesosDisponible() {
-        return Monedas10PesosDisponible;
-    }
-
-    public void setMonedas10PesosDisponible(int Monedas10PesosDisponible) {
-        this.Monedas10PesosDisponible = Monedas10PesosDisponible;
-    }
-
     
     //Posiblemente varios inline method.
-    public void disminuirMonedasPeso(){
-        MonedasPesoDisponible = MonedasPesoDisponible-1;
+    public int disminuirMonedasPeso(){
+        MonedasPeso = MonedasPeso - 1;
+        return MonedasPeso;
     }
-     public void disminuirMonedas2Pesos(){
-        Monedas2PesosDisponible = Monedas2PesosDisponible-1;
+     public int disminuirMonedas2Pesos(){
+        Monedas2Pesos = Monedas2Pesos - 1;
+        return Monedas2Pesos;
     }
-     public void disminuirMonedas5Pesos(){
-        Monedas5PesosDisponible = Monedas5PesosDisponible-1;
+     public int disminuirMonedas5Pesos(){
+        Monedas5Pesos = Monedas5Pesos - 1;
+        return Monedas5Pesos;
     }
-     public void disminuirMonedas10Pesos(){
-       Monedas10PesosDisponible = Monedas10PesosDisponible-1;
+     public int disminuirMonedas10Pesos(){
+       Monedas10Pesos = Monedas10Pesos - 1;
+       return Monedas10Pesos;
     }
     
-    
-        
 }
