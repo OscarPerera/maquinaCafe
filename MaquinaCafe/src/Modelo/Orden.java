@@ -90,12 +90,5 @@ public class Orden {
        double cambio = dineroIngresado - costoOrden;
        return cambio;
    }
-
-    @Override
-    public String toString() {
-        return "Orden{" + "dineroIngresado=" + dineroIngresado + ", costoOrden=" + costoOrden + ", tipoCafe=" + tipoCafe + ", cucharadasAzucar=" + cucharadasAzucar + ", fecha=" + fecha + ", dineroCambio=" + dineroCambio + '}';
-    }
-   
-   
    
 }
