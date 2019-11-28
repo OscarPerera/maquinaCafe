@@ -52,18 +52,18 @@ public class Index extends javax.swing.JFrame {
         btnDiezPesos = new javax.swing.JButton();
         btnVeintePesos = new javax.swing.JButton();
         btnCincuentaPesos = new javax.swing.JButton();
-        txtDineroIntroducido = new javax.swing.JTextField();
+        dineroIntroducidotxt = new javax.swing.JTextField();
         dineroIntroducidolb = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         costoOrdenlb = new javax.swing.JLabel();
-        txtCostoOrden = new javax.swing.JTextField();
+        costoOrdentxt = new javax.swing.JTextField();
         btnConfirmar = new javax.swing.JButton();
         cucharadasAzucarbox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         signoPesoslb = new javax.swing.JLabel();
         signoPesoslb2 = new javax.swing.JLabel();
         cafeSeleccionadolb = new javax.swing.JLabel();
-        txtCafeSeleccionado = new javax.swing.JTextField();
+        cafeSeleccionadotxt = new javax.swing.JTextField();
         btnImprimirReportes = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtReporteVentas = new javax.swing.JTextField();
@@ -140,7 +140,7 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        txtDineroIntroducido.setText("0.0");
+        dineroIntroducidotxt.setText("0.0");
 
         dineroIntroducidolb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         dineroIntroducidolb.setText("Dinero Introducido:");
@@ -157,7 +157,7 @@ public class Index extends javax.swing.JFrame {
         costoOrdenlb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         costoOrdenlb.setText("Ingrese por favor:");
 
-        txtCostoOrden.setText("0.0");
+        costoOrdentxt.setText("0.0");
 
         btnConfirmar.setBackground(new java.awt.Color(165, 136, 85));
         btnConfirmar.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
@@ -205,7 +205,6 @@ public class Index extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel5.setText("Reporte de ingredientes: ");
 
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,58 +214,61 @@ public class Index extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtReporteVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtReporteCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtReporteVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel3))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtReporteCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(14, 14, 14)
+                                        .addComponent(cucharadasAzucarbox, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(11, 11, 11)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(signoPesoslb)
+                                    .addComponent(signoPesoslb2)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(capuccinobtn)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(descafeinadobtn)
-                                    .addComponent(jLabel1))
-                                .addGap(14, 14, 14)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cucharadasAzucarbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(negrobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(descafeinadobtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(negrobtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtCafeSeleccionado)
+                                        .addComponent(cafeSeleccionadotxt)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(signoPesoslb)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtCostoOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(11, 11, 11)
+                                                .addComponent(costoOrdentxt, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(dineroIntroducidolb))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(signoPesoslb2)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(txtDineroIntroducido, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(11, 11, 11)
+                                            .addComponent(dineroIntroducidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(cafeSeleccionadolb)
                                         .addComponent(costoOrdenlb)
-                                        .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(btnImprimirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnImprimirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnVeintePesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnDiezPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(181, 181, 181)
-                                .addComponent(btnCincuentaPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(56, Short.MAX_VALUE))
+                            .addComponent(btnCincuentaPesos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,10 +276,29 @@ public class Index extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
-                            .addComponent(descafeinadobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(capuccinobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(negrobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                                .addComponent(descafeinadobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(capuccinobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(negrobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cafeSeleccionadolb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cafeSeleccionadotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(costoOrdenlb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(costoOrdentxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dineroIntroducidolb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dineroIntroducidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnConfirmar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnImprimirReportes)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -285,31 +306,13 @@ public class Index extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cafeSeleccionadolb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCafeSeleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(costoOrdenlb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(signoPesoslb)
-                                    .addComponent(txtCostoOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dineroIntroducidolb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(signoPesoslb2)
-                                    .addComponent(txtDineroIntroducido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(68, 68, 68)
+                                .addComponent(signoPesoslb)
+                                .addGap(39, 39, 39)
+                                .addComponent(signoPesoslb2))
                             .addComponent(btnDiezPesos))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnVeintePesos)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCancelar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnConfirmar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnImprimirReportes)))
+                        .addComponent(btnVeintePesos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCincuentaPesos)))
                 .addGap(53, 53, 53)
@@ -321,7 +324,7 @@ public class Index extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                     .addComponent(txtReporteVentas)
                     .addComponent(txtReporteCambio, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(46, 46, 46))
@@ -340,56 +343,61 @@ public class Index extends javax.swing.JFrame {
 
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         // TODO add your handling code here:
-
-        txtDineroIntroducido.setText("0.0");
-        txtCostoOrden.setText("0.0");
-        txtCafeSeleccionado.setText("");
+        int confirmacionCancelacion = JOptionPane.showConfirmDialog(null, "¿Desea cancelar su orden?");
+        if(confirmacionCancelacion == 0){
+            limpiarPantalla();
+        }
     }//GEN-LAST:event_btnCancelarMouseClicked
 
 
     private void btnDiezPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiezPesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
-        txtDineroIntroducido.setText(String.valueOf(dineroActual + 10));
+        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
+        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 10));
     }//GEN-LAST:event_btnDiezPesosMouseClicked
 
     private void btnVeintePesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVeintePesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
-        txtDineroIntroducido.setText(String.valueOf(dineroActual + 20));
+        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
+        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 20));
     }//GEN-LAST:event_btnVeintePesosMouseClicked
 
     private void btnCincuentaPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincuentaPesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
-        txtDineroIntroducido.setText(String.valueOf(dineroActual + 50));
+        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
+        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 50));
     }//GEN-LAST:event_btnCincuentaPesosMouseClicked
 
     private void capuccinobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_capuccinobtnMouseClicked
         // TODO add your handling code here:
-        txtCostoOrden.setText("37.0");
-        txtCafeSeleccionado.setText("capuccino");
+        costoOrdentxt.setText("37.0");
+        cafeSeleccionadotxt.setText("capuccino");
     }//GEN-LAST:event_capuccinobtnMouseClicked
 
     private void descafeinadobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descafeinadobtnMouseClicked
         // TODO add your handling code here:
-        txtCostoOrden.setText("35.0");
-        txtCafeSeleccionado.setText("descafeinado");
+        costoOrdentxt.setText("35.0");
+        cafeSeleccionadotxt.setText("descafeinado");
     }//GEN-LAST:event_descafeinadobtnMouseClicked
 
     private void negrobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negrobtnMouseClicked
         // TODO add your handling code here:
-        txtCostoOrden.setText("33.0");
-        txtCafeSeleccionado.setText("negro");
+        costoOrdentxt.setText("33.0");
+        cafeSeleccionadotxt.setText("negro");
     }//GEN-LAST:event_negrobtnMouseClicked
 
     private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
         // TODO add your handling code here:
-
-        double dineroIngresado = Double.parseDouble(txtDineroIntroducido.getText());
-        String tipoCafe = txtCafeSeleccionado.getText();
+        double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
+        double costoOrden = Double.parseDouble(costoOrdentxt.getText());
+        String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
-        Orden nuevaOrden = new Orden(dineroIngresado, tipoCafe, cucharadasAzucar);
+        Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
+        String respuestaOrden = controlador.nuevaOrden(nuevaOrden);
+        if(!respuestaOrden.substring(0, 5).equals("Error")){
+            limpiarPantalla();
+        }
+        JOptionPane.showMessageDialog(null, respuestaOrden);
     }//GEN-LAST:event_btnConfirmarMouseClicked
 
     private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
@@ -400,6 +408,7 @@ public class Index extends javax.swing.JFrame {
         dineroIntroducidotxt.setText("0.0");
         costoOrdentxt.setText("0.0");
         cafeSeleccionadotxt.setText("");
+        cucharadasAzucarbox.setSelectedIndex(0);
     }
     /**
      * @param args the command line arguments
@@ -445,11 +454,14 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton btnImprimirReportes;
     private javax.swing.JButton btnVeintePesos;
     private javax.swing.JLabel cafeSeleccionadolb;
+    private javax.swing.JTextField cafeSeleccionadotxt;
     private javax.swing.JButton capuccinobtn;
     private javax.swing.JLabel costoOrdenlb;
+    private javax.swing.JTextField costoOrdentxt;
     private javax.swing.JComboBox<String> cucharadasAzucarbox;
     private javax.swing.JButton descafeinadobtn;
     private javax.swing.JLabel dineroIntroducidolb;
+    private javax.swing.JTextField dineroIntroducidotxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -458,9 +470,6 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JButton negrobtn;
     private javax.swing.JLabel signoPesoslb;
     private javax.swing.JLabel signoPesoslb2;
-    private javax.swing.JTextField txtCafeSeleccionado;
-    private javax.swing.JTextField txtCostoOrden;
-    private javax.swing.JTextField txtDineroIntroducido;
     private javax.swing.JTextField txtReporteCambio;
     private javax.swing.JTextField txtReporteIngredientes;
     private javax.swing.JTextField txtReporteVentas;
