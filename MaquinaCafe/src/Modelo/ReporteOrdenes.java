@@ -22,6 +22,7 @@ public class ReporteOrdenes {
     }
  
   
+
 public void AgregarOrden(Orden nuevaOrden){
     listaOrdenes.add(nuevaOrden);
 }
@@ -38,4 +39,7 @@ while(ordenActual.hasNext()){
 }
   
   
+
+
+   
 
