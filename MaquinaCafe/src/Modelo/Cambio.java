@@ -56,5 +56,16 @@ public class Cambio {
        Monedas10Pesos = Monedas10Pesos - 1;
        return Monedas10Pesos;
     }
+     
+     
+     
+     public void ReportarCambio(){
+         
+         System.out.println("Datos Iniciales:");
+         System.out.println("Cantidad de monedas de peso:");
+         System.out.println("Cantidad de monedas de 2 pesos:");
+         System.out.println("Cantidad de monedas de 5 pesos:");
+         System.out.println("Cantidad de monedas de 10 pesos:");
+     }
     
 }

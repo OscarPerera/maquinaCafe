@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.*;
 import Modelo.Orden;
+import Modelo.ReporteOrdenes;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 
@@ -155,6 +156,12 @@ public class Index extends javax.swing.JFrame {
         signoPesoslb2.setText("$");
 
         cafeSeleccionadolb.setText("Café seleccionado:");
+
+        cafeSeleccionadotxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cafeSeleccionadotxtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -338,10 +345,16 @@ public class Index extends javax.swing.JFrame {
     private void confirmarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmarbtnMouseClicked
         // TODO add your handling code here:
         double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
+        double costoOrden = Double.parseDouble(costoOrdentxt.getText());
         String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
-        Orden nuevaOrden = new Orden(dineroIngresado, tipoCafe, cucharadasAzucar);
+        Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
+        
     }//GEN-LAST:event_confirmarbtnMouseClicked
+
+    private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cafeSeleccionadotxtActionPerformed
 
     /**
      * @param args the command line arguments
