@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.*;
 import Modelo.Orden;
+import Modelo.*;
 
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
