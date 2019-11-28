@@ -9,48 +9,14 @@ package Modelo;
  *
  * @author Oscar Perera
  */
-public abstract class Capsula {
-    int cantidadInicial;
-    int cantidadDisponible;
-    int precioCapsula;
+public class Capsula extends Ingrediente{
 
-    public Capsula(int cantidadInicial, int cantidadDisponible, int precioCapsula) {
-        this.cantidadInicial = cantidadInicial;
-        this.cantidadDisponible = cantidadDisponible;
-        this.precioCapsula = precioCapsula;
+    public Capsula(int cantidadInicial, int cantidadDisponible) {
+        super(cantidadInicial, cantidadDisponible);
     }
 
-    public int getCantidadInicial() {
-        return cantidadInicial;
-    }
-
-    public void setCantidadInicial(int cantidadInicial) {
-        this.cantidadInicial = cantidadInicial;
-    }
-
-    public int getCantidadDisponible() {
-        return cantidadDisponible;
-    }
-
-    public void setCantidadDisponible(int cantidadDisponible) {
-        this.cantidadDisponible = cantidadDisponible;
-    }
-
-    public int getPrecioCapsula() {
-        return precioCapsula;
-    }
-
-    public void setPrecioCapsula(int precioCapsula) {
-        this.precioCapsula = precioCapsula;
-    }
-
-    
-    
-
-   
-    
-    public void PrepararCafé(){
-        cantidadDisponible=cantidadDisponible-1;
+    public void PrepararCafe(){
+        super.setCantidadDisponible(super.getCantidadDisponible() - 1);
     }
         
 }

@@ -35,6 +35,4 @@ public class ProductoVendido {
         this.gramosAzucar = gramosAzucar;
     }
     
-    
-    
 }

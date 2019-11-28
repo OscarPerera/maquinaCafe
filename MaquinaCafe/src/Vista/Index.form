@@ -62,21 +62,44 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                      <Component id="costoOrdentxt" alignment="1" min="-2" pref="98" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="costoOrdenlb" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Component id="dineroIntroducidolb" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="signoPesoslb2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="dineroIntroducidotxt" min="-2" pref="89" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="costoOrdenlb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Component id="signoPesoslb" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="costoOrdentxt" min="-2" pref="98" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="dineroIntroducidotxt" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="dineroIntroducidolb" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <Component id="cafeSeleccionadolb" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cafeSeleccionadotxt" pref="97" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="162" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -107,6 +130,18 @@
                           <Component id="negrobtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cafeSeleccionadolb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cafeSeleccionadotxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="costoNegrolb" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -121,15 +156,20 @@
                           <Component id="cincuentaPesosbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Component id="costoOrdenlb" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="costoOrdentxt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="costoOrdentxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="signoPesoslb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="dineroIntroducidolb" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="dineroIntroducidotxt" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="dineroIntroducidotxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="signoPesoslb2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -152,6 +192,7 @@
         <Property name="text" type="java.lang.String" value="capuccino"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="capuccinobtnMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="capuccinobtnActionPerformed"/>
       </Events>
     </Component>
@@ -159,28 +200,46 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="descafeinado"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="descafeinadobtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="negrobtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="negro"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="negrobtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="diezPesosbtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="10 pesos"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="diezPesosbtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="veintePesosbtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="20 pesos"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="veintePesosbtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cincuentaPesosbtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="50 pesos"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cincuentaPesosbtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="dineroIntroducidotxt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="dineroIntroducidolb">
       <Properties>
@@ -191,6 +250,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar Operaci&#xf3;n"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cancelarbtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="costoOrdenlb">
       <Properties>
@@ -198,6 +260,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="costoOrdentxt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="costoCapuccinolb">
       <Properties>
@@ -218,6 +283,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="confirmarbtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="cucharadasAzucarbox">
       <Properties>
@@ -241,6 +309,23 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Seleccione la cantidad de cucharadas de az&#xfa;car"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="signoPesoslb">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="$"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="signoPesoslb2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="$"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="cafeSeleccionadolb">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Caf&#xe9; seleccionado:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cafeSeleccionadotxt">
     </Component>
   </SubComponents>
 </Form>
