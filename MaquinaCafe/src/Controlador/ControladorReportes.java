@@ -22,7 +22,7 @@ public class ControladorReportes {
         Capsula negro = new Capsula(10);
         Capsula capuccino = new Capsula(10);
         cafe = new Cafe(descafeinado, negro, capuccino);
-        azucar = new Azucar(4);
+        azucar = new Azucar(20);
     }
 
     public Cafe getCafe() {
