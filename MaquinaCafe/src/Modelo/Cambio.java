@@ -11,63 +11,74 @@ package Modelo;
  */
 public class Cambio {
     
-    int cantidadMonedasPeso;
-    int cantidadMonedas2Pesos;
-    int cantidadMonedas5Pesos;
-    int cantidadMonedas10Pesos;
-
-    public Cambio(int cntdMonedasPeso, int cntdMonedas2Pesos, int cntdMonedas5Pesos, int cntdMonedas10Pesos) {
-        this.cantidadMonedasPeso = cntdMonedasPeso;
-        this.cantidadMonedas2Pesos = cntdMonedas2Pesos;
-        this.cantidadMonedas5Pesos = cntdMonedas5Pesos;
-        this.cantidadMonedas10Pesos = cntdMonedas10Pesos;
-    }
-
-    public int getCntdMonedasPeso() {
-        return cantidadMonedasPeso;
-    }
-
-    public void setCntdMonedasPeso(int cntdMonedasPeso) {
-        this.cantidadMonedasPeso = cntdMonedasPeso;
-    }
-
-    public int getCntdMonedas2Pesos() {
-        return cantidadMonedas2Pesos;
-    }
-
-    public void setCntdMonedas2Pesos(int cntdMonedas2Pesos) {
-        this.cantidadMonedas2Pesos = cntdMonedas2Pesos;
-    }
-
-    public int getCntdMonedas5Pesos() {
-        return cantidadMonedas5Pesos;
-    }
-
-    public void setCntdMonedas5Pesos(int cntdMonedas5Pesos) {
-        this.cantidadMonedas5Pesos = cntdMonedas5Pesos;
-    }
-
-    public int getCntdMonedas10Pesos() {
-        return cantidadMonedas10Pesos;
-    }
-
-    public void setCntdMonedas10Pesos(int cntdMonedas10Pesos) {
-        this.cantidadMonedas10Pesos = cntdMonedas10Pesos;
-    }
+    final int  MonedasPesoIniciales;
+    final int  Monedas2PesosIniciales;
+    final int  Monedas5PesosIniciales;
+    final int  Monedas10PesosIniciales;
+    int MonedasPesoDisponible;
+    int Monedas2PesosDisponible;
+    int Monedas5PesosDisponible;
+    int Monedas10PesosDisponible;
+        
     
+    public Cambio(int MonedasPesoIniciales, int Monedas2PesosIniciales, int Monedas5PesosIniciales, int Monedas10PesosIniciales) {
+        this.MonedasPesoIniciales = MonedasPesoIniciales;
+        this.Monedas2PesosIniciales = Monedas2PesosIniciales;
+        this.Monedas5PesosIniciales = Monedas5PesosIniciales;
+        this.Monedas10PesosIniciales = Monedas10PesosIniciales;
+        
+         this.MonedasPesoDisponible = MonedasPesoIniciales ;
+         this.MonedasPesoDisponible =  Monedas2PesosIniciales;
+         this.MonedasPesoDisponible =  Monedas5PesosIniciales ;
+         this.MonedasPesoDisponible =   Monedas10PesosIniciales;
+        
+    }
+
+    public int getMonedasPesoDisponible() {
+        return MonedasPesoDisponible;
+    }
+
+    public void setMonedasPesoDisponible(int MonedasPesoDisponible) {
+        this.MonedasPesoDisponible = MonedasPesoDisponible;
+    }
+
+    public int getMonedas2PesosDisponible() {
+        return Monedas2PesosDisponible;
+    }
+
+    public void setMonedas2PesosDisponible(int Monedas2PesosDisponible) {
+        this.Monedas2PesosDisponible = Monedas2PesosDisponible;
+    }
+
+    public int getMonedas5PesosDisponible() {
+        return Monedas5PesosDisponible;
+    }
+
+    public void setMonedas5PesosDisponible(int Monedas5PesosDisponible) {
+        this.Monedas5PesosDisponible = Monedas5PesosDisponible;
+    }
+
+    public int getMonedas10PesosDisponible() {
+        return Monedas10PesosDisponible;
+    }
+
+    public void setMonedas10PesosDisponible(int Monedas10PesosDisponible) {
+        this.Monedas10PesosDisponible = Monedas10PesosDisponible;
+    }
+
     
     //Posiblemente varios inline method.
     public void disminuirMonedasPeso(){
-        cantidadMonedasPeso = cantidadMonedasPeso-1;
+        MonedasPesoDisponible = MonedasPesoDisponible-1;
     }
      public void disminuirMonedas2Pesos(){
-        cantidadMonedas2Pesos = cantidadMonedas2Pesos-1;
+        Monedas2PesosDisponible = Monedas2PesosDisponible-1;
     }
      public void disminuirMonedas5Pesos(){
-        cantidadMonedas5Pesos = cantidadMonedas5Pesos-1;
+        Monedas5PesosDisponible = Monedas5PesosDisponible-1;
     }
      public void disminuirMonedas10Pesos(){
-       cantidadMonedas10Pesos = cantidadMonedas10Pesos-1;
+       Monedas10PesosDisponible = Monedas10PesosDisponible-1;
     }
     
     
