@@ -5,20 +5,15 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Oscar Perera
  */
-public class CafeNegro extends Capsula{
-
-    public CafeNegro(int cantidadInicial, int cantidadDisponible, int precioCapsula) {
-        super(cantidadInicial, cantidadDisponible, precioCapsula);
-    }
-
+public class Reportes {
     
-    
-    
-    
+    ArrayList<Orden> reporteOrdenes = new ArrayList<>();
     
     
 }

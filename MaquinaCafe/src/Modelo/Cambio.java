@@ -11,65 +11,53 @@ package Modelo;
  */
 public class Cambio {
     
-    int cantidadMonedasPeso;
-    int cantidadMonedas2Pesos;
-    int cantidadMonedas5Pesos;
-    int cantidadMonedas10Pesos;
-
-    public Cambio(int cntdMonedasPeso, int cntdMonedas2Pesos, int cntdMonedas5Pesos, int cntdMonedas10Pesos) {
-        this.cantidadMonedasPeso = cntdMonedasPeso;
-        this.cantidadMonedas2Pesos = cntdMonedas2Pesos;
-        this.cantidadMonedas5Pesos = cntdMonedas5Pesos;
-        this.cantidadMonedas10Pesos = cntdMonedas10Pesos;
+    int MonedasPeso;
+    int Monedas2Pesos;
+    int Monedas5Pesos;
+    int Monedas10Pesos;
+          
+    public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, int Monedas10Pesos) {      
+        this.MonedasPeso = MonedasPeso ;
+        this.Monedas2Pesos =  Monedas2Pesos;
+        this.Monedas5Pesos =  Monedas5Pesos ;
+        this.Monedas10Pesos =   Monedas10Pesos;    
     }
 
-    public int getCntdMonedasPeso() {
-        return cantidadMonedasPeso;
-    }
-
-    public void setCntdMonedasPeso(int cntdMonedasPeso) {
-        this.cantidadMonedasPeso = cntdMonedasPeso;
-    }
-
-    public int getCntdMonedas2Pesos() {
-        return cantidadMonedas2Pesos;
-    }
-
-    public void setCntdMonedas2Pesos(int cntdMonedas2Pesos) {
-        this.cantidadMonedas2Pesos = cntdMonedas2Pesos;
-    }
-
-    public int getCntdMonedas5Pesos() {
-        return cantidadMonedas5Pesos;
-    }
-
-    public void setCntdMonedas5Pesos(int cntdMonedas5Pesos) {
-        this.cantidadMonedas5Pesos = cntdMonedas5Pesos;
-    }
-
-    public int getCntdMonedas10Pesos() {
-        return cantidadMonedas10Pesos;
-    }
-
-    public void setCntdMonedas10Pesos(int cntdMonedas10Pesos) {
-        this.cantidadMonedas10Pesos = cntdMonedas10Pesos;
+    public int getMonedasPesoDisponibles() {
+        return MonedasPeso;
     }
     
-    
-    //Posiblemente varios inline method.
-    public void disminuirMonedasPeso(){
-        cantidadMonedasPeso = cantidadMonedasPeso-1;
+    public int getMonedas2PesosDisponibles() {
+        return Monedas2Pesos;
     }
-     public void disminuirMonedas2Pesos(){
-        cantidadMonedas2Pesos = cantidadMonedas2Pesos-1;
+
+    public int getMonedas5PesosDisponibles() {
+        return Monedas5Pesos;
     }
-     public void disminuirMonedas5Pesos(){
-        cantidadMonedas5Pesos = cantidadMonedas5Pesos-1;
+
+    public int getMonedas10PesosDisponibles() {
+        return Monedas10Pesos;
     }
-     public void disminuirMonedas10Pesos(){
-       cantidadMonedas10Pesos = cantidadMonedas10Pesos-1;
+
+    public void setMonedasPeso(int MonedasPeso) {
+        this.MonedasPeso = MonedasPeso;
     }
-    
-    
-        
+
+    public void setMonedas2Pesos(int Monedas2Pesos) {
+        this.Monedas2Pesos = Monedas2Pesos;
+    }
+
+    public void setMonedas5Pesos(int Monedas5Pesos) {
+        this.Monedas5Pesos = Monedas5Pesos;
+    }
+
+    public void setMonedas10Pesos(int Monedas10Pesos) {
+        this.Monedas10Pesos = Monedas10Pesos;
+    }
+
+    @Override
+    public String toString() {
+        return "1 Peso: " + MonedasPeso + "\n2 Pesos: " + Monedas2Pesos + "\n5 Pesos: " + Monedas5Pesos + "\n10 Pesos: " + Monedas10Pesos;
+    }
+
 }
