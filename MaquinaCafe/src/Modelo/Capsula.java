@@ -11,8 +11,8 @@ package Modelo;
  */
 public class Capsula extends Ingrediente{
 
-    public Capsula(int cantidadInicial, int cantidadDisponible) {
-        super(cantidadInicial, cantidadDisponible);
+    public Capsula(int cantidadInicial) {
+        super(cantidadInicial);
     }
 
     public void PrepararCafe(){

@@ -14,9 +14,12 @@ public class Cafe{
     private Capsula descafeinado;
     private Capsula negro;
     private Capsula capuccino;
-    
-    public Cafe() {       
-    }   
+
+    public Cafe(Capsula descafeinado, Capsula negro, Capsula capuccino) {
+        this.descafeinado = descafeinado;
+        this.negro = negro;
+        this.capuccino = capuccino;
+    }
 
     public Capsula getDescafeinado() {
         return descafeinado;

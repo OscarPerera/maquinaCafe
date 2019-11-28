@@ -13,16 +13,12 @@ import java.util.ArrayList;
  */
 public class ReporteOrdenes {
     
-  ArrayList<Orden> ListaOrdenes = new ArrayList<>();
+  
 
   
    public ReporteOrdenes() {
     }
  
-  
-    public void AgregarOrden(Orden nuevaOrden){
-        ListaOrdenes.add(nuevaOrden);
-    }
 
     public void ReporteOrdenes(){
 

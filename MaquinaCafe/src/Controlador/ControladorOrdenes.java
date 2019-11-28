@@ -14,10 +14,12 @@ import Modelo.*;
 public class ControladorOrdenes {
     private final Cambio cambioInicial;
     private Cambio cambio;
+    private ControladorReportes controladorReportes;
     
     public ControladorOrdenes(Cambio cambio) {
         this.cambioInicial = cambio;
         this.cambio = cambio;
+        controladorReportes = new ControladorReportes();
     }
     
     public String nuevaOrden(Orden nuevaOrden){   
@@ -25,7 +27,13 @@ public class ControladorOrdenes {
         if(!nuevaOrden.getTipoCafe().equals("")){
             if(nuevaOrden.devolverCambio()>=0){
                 if(cambioDeOrden!=null){
-                    return cambioDeOrden.toString();
+                    boolean ingredientesSuficientes = controladorReportes.AgregarOrden(nuevaOrden);
+                    if(ingredientesSuficientes){
+                        return cambioDeOrden.toString();
+                    }
+                    else {
+                        return "Error: Ingredientes insuficientes para esta orden";
+                    }
                 }
                 else {
                     return "Error: No es posible entregar el cambio exacto";
@@ -38,10 +46,6 @@ public class ControladorOrdenes {
         else {
             return "Error: Por favor, seleccione un producto";
         }             
-    }
-    
-    private void registrarOrden(){
-        
     }
     
     private Cambio darCambio(double cambioNecesario){
@@ -66,7 +70,6 @@ public class ControladorOrdenes {
             monedas1Necesarias = cambio.getMonedasPesoDisponibles();
         }
         cambioNecesarioParcial = cambioNecesarioParcial - monedas1Necesarias;
-        System.out.println(cambioNecesarioParcial);
         if(cambioNecesarioParcial == 0){
             Cambio cambioParaDevolver = new Cambio(monedas1Necesarias, monedas2Necesarias,
                                             monedas5Necesarias, monedas10Necesarias);
