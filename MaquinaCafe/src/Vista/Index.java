@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
  */
 public class Index extends javax.swing.JFrame {
     ControladorOrdenes controlador;
+    ReporteOrdenes listaOrdenes = new ReporteOrdenes();
     /**
      * Creates new form index
      */
@@ -349,6 +350,9 @@ public class Index extends javax.swing.JFrame {
         String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
+        listaOrdenes.AgregarOrden(nuevaOrden);
+        
+        
         
     }//GEN-LAST:event_confirmarbtnMouseClicked
 

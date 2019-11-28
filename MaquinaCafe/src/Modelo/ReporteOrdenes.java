@@ -6,27 +6,36 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
  * @author Oscar Perera
  */
 public class ReporteOrdenes {
-    
-  ArrayList<Orden> ListaOrdenes = new ArrayList<>();
+  
+  ArrayList<Orden> listaOrdenes = new ArrayList<>();
 
   
    public ReporteOrdenes() {
+       
     }
  
   
 public void AgregarOrden(Orden nuevaOrden){
-    ListaOrdenes.add(nuevaOrden);
+    listaOrdenes.add(nuevaOrden);
 }
   
-public void ReporteOrdenes(){
+public void ObtenerReporte(){
+   Iterator<Orden> ordenActual = listaOrdenes.iterator();
+// mientras al iterador queda proximo juego
+while(ordenActual.hasNext()){
+    Orden objeto=ordenActual.next();
+    System.out.println(objeto.toString());
     
 }
-  
-  
 }
+}
+  
+  
+
