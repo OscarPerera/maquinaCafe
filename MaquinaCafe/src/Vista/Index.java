@@ -7,7 +7,7 @@ package Vista;
 
 import Controlador.*;
 import Modelo.Orden;
-import Modelo.ReporteOrdenes;
+
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class Index extends javax.swing.JFrame {
     ControladorOrdenes controlador;
-    ReporteOrdenes listaOrdenes = new ReporteOrdenes();
+  
     /**
      * Creates new form index
      */
@@ -352,7 +352,7 @@ public class Index extends javax.swing.JFrame {
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
 
-        listaOrdenes.AgregarOrden(nuevaOrden);
+       
         
         
         
