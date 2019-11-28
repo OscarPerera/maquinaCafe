@@ -31,16 +31,62 @@ public class Orden {
         dineroCambio = devolverCambio();
     }  
     
-   public String FechaConHora()
-    {
+   public String FechaConHora(){
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
        return hourdateFormat.format(date);
        
     }
 
-   public double devolverCambio()
-   {
+    public double getDineroIngresado() {
+        return dineroIngresado;
+    }
+
+    public void setDineroIngresado(double dineroIngresado) {
+        this.dineroIngresado = dineroIngresado;
+    }
+
+    public double getCostoOrden() {
+        return costoOrden;
+    }
+
+    public void setCostoOrden(double costoOrden) {
+        this.costoOrden = costoOrden;
+    }
+
+    public String getTipoCafe() {
+        return tipoCafe;
+    }
+
+    public void setTipoCafe(String tipoCafe) {
+        this.tipoCafe = tipoCafe;
+    }
+
+    public int getCucharadasAzucar() {
+        return cucharadasAzucar;
+    }
+
+    public void setCucharadasAzucar(int cucharadasAzucar) {
+        this.cucharadasAzucar = cucharadasAzucar;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public double getDineroCambio() {
+        return dineroCambio;
+    }
+
+    public void setDineroCambio(double dineroCambio) {
+        this.dineroCambio = dineroCambio;
+    }
+
+   public double devolverCambio(){
        double cambio = dineroIngresado - costoOrden;
        return cambio;
    }

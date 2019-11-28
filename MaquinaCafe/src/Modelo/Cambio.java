@@ -18,9 +18,9 @@ public class Cambio {
           
     public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, int Monedas10Pesos) {      
         this.MonedasPeso = MonedasPeso ;
-        this.MonedasPeso =  Monedas2Pesos;
-        this.MonedasPeso =  Monedas5Pesos ;
-        this.MonedasPeso =   Monedas10Pesos;    
+        this.Monedas2Pesos =  Monedas2Pesos;
+        this.Monedas5Pesos =  Monedas5Pesos ;
+        this.Monedas10Pesos =   Monedas10Pesos;    
     }
 
     public int getMonedasPesoDisponibles() {
@@ -59,12 +59,5 @@ public class Cambio {
     public String toString() {
         return "1 Peso: " + MonedasPeso + "\n2 Pesos: " + Monedas2Pesos + "\n5 Pesos: " + Monedas5Pesos + "\n10 Pesos: " + Monedas10Pesos;
     }
-     
-    public void ReportarCambio(){        
-        System.out.println("Datos Iniciales:");
-        System.out.println("Cantidad de monedas de peso:");
-        System.out.println("Cantidad de monedas de 2 pesos:");
-        System.out.println("Cantidad de monedas de 5 pesos:");
-        System.out.println("Cantidad de monedas de 10 pesos:");
-    }    
+
 }

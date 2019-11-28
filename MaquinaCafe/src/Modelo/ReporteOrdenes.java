@@ -20,13 +20,12 @@ public class ReporteOrdenes {
     }
  
   
-public void AgregarOrden(Orden nuevaOrden){
-    ListaOrdenes.add(nuevaOrden);
-}
-  
-public void ReporteOrdenes(){
-    
-}
-  
-  
+    public void AgregarOrden(Orden nuevaOrden){
+        ListaOrdenes.add(nuevaOrden);
+    }
+
+    public void ReporteOrdenes(){
+
+    }
+   
 }
