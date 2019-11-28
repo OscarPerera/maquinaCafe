@@ -86,6 +86,5 @@ public class ControladorReportes {
     
     public void registrarOrden(Orden nuevaOrden){
         ListaOrdenes.add(nuevaOrden);
-    }
-   
+    }  
 }
