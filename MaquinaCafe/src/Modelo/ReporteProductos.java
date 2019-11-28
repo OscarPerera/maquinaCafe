@@ -11,9 +11,14 @@ import java.util.ArrayList;
  *
  * @author Oscar Perera
  */
-public class Reportes {
+public class ReporteProductos {
     
-    ArrayList<Orden> reporteOrdenes = new ArrayList<>();
     
+    
+   public void ObtenerDatos(){
+       
+   }
+    
+ 
     
 }
