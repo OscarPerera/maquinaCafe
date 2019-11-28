@@ -8,6 +8,7 @@ package Vista;
 import Controlador.*;
 import Modelo.Orden;
 import java.awt.event.ActionListener;
+import javafx.scene.paint.Color;
 import javax.swing.JComboBox;
 
 /**
@@ -22,6 +23,7 @@ public class Index extends javax.swing.JFrame {
     public Index() {
         initComponents();
         inicializarAzucarComboBox();
+        this.getContentPane().setBackground(java.awt.Color.getHSBColor(38, 48, 65));
         controlador = MainPrincipal.controlador;
     }
 
@@ -45,28 +47,39 @@ public class Index extends javax.swing.JFrame {
         capuccinobtn = new javax.swing.JButton();
         descafeinadobtn = new javax.swing.JButton();
         negrobtn = new javax.swing.JButton();
-        diezPesosbtn = new javax.swing.JButton();
-        veintePesosbtn = new javax.swing.JButton();
-        cincuentaPesosbtn = new javax.swing.JButton();
-        dineroIntroducidotxt = new javax.swing.JTextField();
+        btnDiezPesos = new javax.swing.JButton();
+        btnVeintePesos = new javax.swing.JButton();
+        btnCincuentaPesos = new javax.swing.JButton();
+        txtDineroIntroducido = new javax.swing.JTextField();
         dineroIntroducidolb = new javax.swing.JLabel();
-        cancelarbtn = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         costoOrdenlb = new javax.swing.JLabel();
-        costoOrdentxt = new javax.swing.JTextField();
-        costoCapuccinolb = new javax.swing.JLabel();
-        costoDescafeinadolb = new javax.swing.JLabel();
-        costoNegrolb = new javax.swing.JLabel();
-        confirmarbtn = new javax.swing.JButton();
+        txtCostoOrden = new javax.swing.JTextField();
+        btnConfirmar = new javax.swing.JButton();
         cucharadasAzucarbox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         signoPesoslb = new javax.swing.JLabel();
         signoPesoslb2 = new javax.swing.JLabel();
         cafeSeleccionadolb = new javax.swing.JLabel();
-        cafeSeleccionadotxt = new javax.swing.JTextField();
+        txtCafeSeleccionado = new javax.swing.JTextField();
+        btnImprimirReportes = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtReporteVentas = new javax.swing.JTextField();
+        txtReporteCambio = new javax.swing.JTextField();
+        txtReporteIngredientes = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 51, 0));
+        setFont(new java.awt.Font("Bradley Hand ITC", 0, 18)); // NOI18N
+        setForeground(new java.awt.Color(102, 51, 0));
 
-        capuccinobtn.setText("capuccino");
+        capuccinobtn.setBackground(new java.awt.Color(165, 136, 85));
+        capuccinobtn.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        capuccinobtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/capuccino pequeño.jpg"))); // NOI18N
+        capuccinobtn.setText("Capuccino $37");
         capuccinobtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 capuccinobtnMouseClicked(evt);
@@ -78,69 +91,83 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        descafeinadobtn.setText("descafeinado");
+        descafeinadobtn.setBackground(new java.awt.Color(165, 136, 85));
+        descafeinadobtn.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        descafeinadobtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafe_descafeinado.jpg"))); // NOI18N
+        descafeinadobtn.setText("descafeinado $35");
         descafeinadobtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 descafeinadobtnMouseClicked(evt);
             }
         });
 
-        negrobtn.setText("negro");
+        negrobtn.setBackground(new java.awt.Color(165, 136, 85));
+        negrobtn.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        negrobtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cafe_negro_1.jpg"))); // NOI18N
+        negrobtn.setText("negro $33");
         negrobtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 negrobtnMouseClicked(evt);
             }
         });
 
-        diezPesosbtn.setText("10 pesos");
-        diezPesosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnDiezPesos.setBackground(new java.awt.Color(165, 136, 85));
+        btnDiezPesos.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnDiezPesos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/billete_diez_uruguay.jpg"))); // NOI18N
+        btnDiezPesos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                diezPesosbtnMouseClicked(evt);
+                btnDiezPesosMouseClicked(evt);
             }
         });
 
-        veintePesosbtn.setText("20 pesos");
-        veintePesosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnVeintePesos.setBackground(new java.awt.Color(165, 136, 85));
+        btnVeintePesos.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnVeintePesos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/billete_veinte_uruguay_final.PNG"))); // NOI18N
+        btnVeintePesos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                veintePesosbtnMouseClicked(evt);
+                btnVeintePesosMouseClicked(evt);
             }
         });
 
-        cincuentaPesosbtn.setText("50 pesos");
-        cincuentaPesosbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCincuentaPesos.setBackground(new java.awt.Color(165, 136, 85));
+        btnCincuentaPesos.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnCincuentaPesos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/billete_cincuenta_uruguay.jpg"))); // NOI18N
+        btnCincuentaPesos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cincuentaPesosbtnMouseClicked(evt);
+                btnCincuentaPesosMouseClicked(evt);
             }
         });
 
-        dineroIntroducidotxt.setText("0.0");
+        txtDineroIntroducido.setText("0.0");
 
+        dineroIntroducidolb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         dineroIntroducidolb.setText("Dinero Introducido:");
 
-        cancelarbtn.setText("Cancelar Operación");
-        cancelarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCancelar.setBackground(new java.awt.Color(165, 136, 85));
+        btnCancelar.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnCancelar.setText("Cancelar Operación");
+        btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cancelarbtnMouseClicked(evt);
+                btnCancelarMouseClicked(evt);
             }
         });
 
+        costoOrdenlb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         costoOrdenlb.setText("Ingrese por favor:");
 
-        costoOrdentxt.setText("0.0");
+        txtCostoOrden.setText("0.0");
 
-        costoCapuccinolb.setText("$37");
-
-        costoDescafeinadolb.setText("$35");
-
-        costoNegrolb.setText("$33");
-
-        confirmarbtn.setText("Confirmar");
-        confirmarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnConfirmar.setBackground(new java.awt.Color(165, 136, 85));
+        btnConfirmar.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                confirmarbtnMouseClicked(evt);
+                btnConfirmarMouseClicked(evt);
             }
         });
 
+        cucharadasAzucarbox.setBackground(new java.awt.Color(165, 136, 85));
+        cucharadasAzucarbox.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         cucharadasAzucarbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cucharadasAzucarbox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -148,137 +175,153 @@ public class Index extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Seleccione la cantidad de cucharadas de azúcar");
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jLabel1.setText("Seleccione la cantidad de cucharadas de azúcar:");
 
+        signoPesoslb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         signoPesoslb.setText("$");
 
+        signoPesoslb2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         signoPesoslb2.setText("$");
 
+        cafeSeleccionadolb.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         cafeSeleccionadolb.setText("Café seleccionado:");
+
+        btnImprimirReportes.setBackground(new java.awt.Color(165, 136, 85));
+        btnImprimirReportes.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        btnImprimirReportes.setText("Imprimir Reportes");
+
+        jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel2.setText("Reportes");
+
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel3.setText("Reporte de productos vendidos:");
+
+        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel4.setText("Reporte de dinero existente para cambio:");
+
+        jLabel5.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        jLabel5.setText("Reporte de ingredientes: ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(capuccinobtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(descafeinadobtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(negrobtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtReporteVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtReporteCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(capuccinobtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(diezPesosbtn)
-                                .addGap(32, 32, 32))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(costoCapuccinolb)
-                                .addGap(24, 24, 24)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(descafeinadobtn)
+                                    .addComponent(jLabel1))
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cucharadasAzucarbox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(negrobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cancelarbtn)
                             .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(veintePesosbtn)
-                                    .addComponent(costoDescafeinadolb))
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cincuentaPesosbtn, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(costoNegrolb, javax.swing.GroupLayout.Alignment.TRAILING))))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(98, 98, 98)
-                                    .addComponent(dineroIntroducidolb))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(signoPesoslb2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(dineroIntroducidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(costoOrdenlb)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(signoPesoslb)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(costoOrdentxt, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(cafeSeleccionadolb)
-                        .addGap(18, 18, 18)
-                        .addComponent(cafeSeleccionadotxt, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                        .addGap(52, 52, 52))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(37, 37, 37)
-                        .addComponent(cucharadasAzucarbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(confirmarbtn)
-                        .addGap(96, 96, 96))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtCafeSeleccionado)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(signoPesoslb)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtCostoOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(dineroIntroducidolb))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(signoPesoslb2)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtDineroIntroducido, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cafeSeleccionadolb)
+                                        .addComponent(costoOrdenlb)
+                                        .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                                        .addComponent(btnConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btnImprimirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnVeintePesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnDiezPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(181, 181, 181)
+                                .addComponent(btnCincuentaPesos, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                            .addComponent(descafeinadobtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(capuccinobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(negrobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(capuccinobtn)
-                            .addComponent(descafeinadobtn)
-                            .addComponent(negrobtn))
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cafeSeleccionadolb)
-                            .addComponent(cafeSeleccionadotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(cucharadasAzucarbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(costoNegrolb)
-                                .addComponent(costoCapuccinolb))
-                            .addComponent(costoDescafeinadolb, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(diezPesosbtn)
-                            .addComponent(veintePesosbtn)
-                            .addComponent(cincuentaPesosbtn)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(costoOrdenlb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(costoOrdentxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(signoPesoslb))
-                        .addGap(32, 32, 32)
-                        .addComponent(dineroIntroducidolb)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dineroIntroducidotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(signoPesoslb2))))
-                .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cafeSeleccionadolb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCafeSeleccionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(costoOrdenlb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(signoPesoslb)
+                                    .addComponent(txtCostoOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dineroIntroducidolb)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(signoPesoslb2)
+                                    .addComponent(txtDineroIntroducido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnDiezPesos))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnVeintePesos)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnConfirmar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnImprimirReportes)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCincuentaPesos)))
+                .addGap(53, 53, 53)
+                .addComponent(jLabel2)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cucharadasAzucarbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(cancelarbtn)
-                .addGap(44, 44, 44)
-                .addComponent(confirmarbtn)
-                .addContainerGap(113, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtReporteIngredientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
+                    .addComponent(txtReporteVentas)
+                    .addComponent(txtReporteCambio, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(46, 46, 46))
         );
 
         pack();
@@ -292,56 +335,56 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cucharadasAzucarboxItemStateChanged
 
-    private void cancelarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseClicked
+    private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         // TODO add your handling code here:
-        dineroIntroducidotxt.setText("0.0");
-        costoOrdentxt.setText("0.0");
-        cafeSeleccionadotxt.setText("");
-    }//GEN-LAST:event_cancelarbtnMouseClicked
+        txtDineroIntroducido.setText("0.0");
+        txtCostoOrden.setText("0.0");
+        txtCafeSeleccionado.setText("");
+    }//GEN-LAST:event_btnCancelarMouseClicked
 
-    private void diezPesosbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diezPesosbtnMouseClicked
+    private void btnDiezPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiezPesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 10));
-    }//GEN-LAST:event_diezPesosbtnMouseClicked
+        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
+        txtDineroIntroducido.setText(String.valueOf(dineroActual + 10));
+    }//GEN-LAST:event_btnDiezPesosMouseClicked
 
-    private void veintePesosbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_veintePesosbtnMouseClicked
+    private void btnVeintePesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVeintePesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 20));
-    }//GEN-LAST:event_veintePesosbtnMouseClicked
+        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
+        txtDineroIntroducido.setText(String.valueOf(dineroActual + 20));
+    }//GEN-LAST:event_btnVeintePesosMouseClicked
 
-    private void cincuentaPesosbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cincuentaPesosbtnMouseClicked
+    private void btnCincuentaPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincuentaPesosMouseClicked
         // TODO add your handling code here:
-        double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 50));
-    }//GEN-LAST:event_cincuentaPesosbtnMouseClicked
+        double dineroActual = Double.parseDouble(txtDineroIntroducido.getText());
+        txtDineroIntroducido.setText(String.valueOf(dineroActual + 50));
+    }//GEN-LAST:event_btnCincuentaPesosMouseClicked
 
     private void capuccinobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_capuccinobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("37.0");
-        cafeSeleccionadotxt.setText("capuccino");
+        txtCostoOrden.setText("37.0");
+        txtCafeSeleccionado.setText("capuccino");
     }//GEN-LAST:event_capuccinobtnMouseClicked
 
     private void descafeinadobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descafeinadobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("35.0");
-        cafeSeleccionadotxt.setText("descafeinado");
+        txtCostoOrden.setText("35.0");
+        txtCafeSeleccionado.setText("descafeinado");
     }//GEN-LAST:event_descafeinadobtnMouseClicked
 
     private void negrobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negrobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("33.0");
-        cafeSeleccionadotxt.setText("negro");
+        txtCostoOrden.setText("33.0");
+        txtCafeSeleccionado.setText("negro");
     }//GEN-LAST:event_negrobtnMouseClicked
 
-    private void confirmarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmarbtnMouseClicked
+    private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
         // TODO add your handling code here:
-        double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
-        String tipoCafe = cafeSeleccionadotxt.getText();
+        double dineroIngresado = Double.parseDouble(txtDineroIntroducido.getText());
+        String tipoCafe = txtCafeSeleccionado.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado, tipoCafe, cucharadasAzucar);
-    }//GEN-LAST:event_confirmarbtnMouseClicked
+    }//GEN-LAST:event_btnConfirmarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -380,26 +423,31 @@ public class Index extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCincuentaPesos;
+    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnDiezPesos;
+    private javax.swing.JButton btnImprimirReportes;
+    private javax.swing.JButton btnVeintePesos;
     private javax.swing.JLabel cafeSeleccionadolb;
-    private javax.swing.JTextField cafeSeleccionadotxt;
-    private javax.swing.JButton cancelarbtn;
     private javax.swing.JButton capuccinobtn;
-    private javax.swing.JButton cincuentaPesosbtn;
-    private javax.swing.JButton confirmarbtn;
-    private javax.swing.JLabel costoCapuccinolb;
-    private javax.swing.JLabel costoDescafeinadolb;
-    private javax.swing.JLabel costoNegrolb;
     private javax.swing.JLabel costoOrdenlb;
-    private javax.swing.JTextField costoOrdentxt;
     private javax.swing.JComboBox<String> cucharadasAzucarbox;
     private javax.swing.JButton descafeinadobtn;
-    private javax.swing.JButton diezPesosbtn;
     private javax.swing.JLabel dineroIntroducidolb;
-    private javax.swing.JTextField dineroIntroducidotxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton negrobtn;
     private javax.swing.JLabel signoPesoslb;
     private javax.swing.JLabel signoPesoslb2;
-    private javax.swing.JButton veintePesosbtn;
+    private javax.swing.JTextField txtCafeSeleccionado;
+    private javax.swing.JTextField txtCostoOrden;
+    private javax.swing.JTextField txtDineroIntroducido;
+    private javax.swing.JTextField txtReporteCambio;
+    private javax.swing.JTextField txtReporteIngredientes;
+    private javax.swing.JTextField txtReporteVentas;
     // End of variables declaration//GEN-END:variables
 }
