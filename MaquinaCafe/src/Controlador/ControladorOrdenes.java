@@ -15,6 +15,7 @@ public class ControladorOrdenes {
     private final Cambio cambioInicial;
     private Cambio cambio;
     private ControladorReportes controladorReportes;
+    private double ganancias = 0;
     
     public ControladorOrdenes(Cambio cambio) {
         this.cambioInicial = cambio;
@@ -29,7 +30,8 @@ public class ControladorOrdenes {
                 if(cambioDeOrden!=null){
                     boolean ingredientesSuficientes = controladorReportes.AgregarOrden(nuevaOrden);
                     if(ingredientesSuficientes){
-                        return cambioDeOrden.toString();
+                        ganancias = ganancias + nuevaOrden.getCostoOrden();
+                        return "Disfrute su café! Su cambio es:\n" + cambioDeOrden.toString();
                     }
                     else {
                         return "Error: Ingredientes insuficientes para esta orden";
@@ -51,28 +53,29 @@ public class ControladorOrdenes {
     private Cambio darCambio(double cambioNecesario){
         int cambioNecesarioParcial = (int)cambioNecesario;
         int monedas10Necesarias = (int)cambioNecesario / 10;
-        if(cambio.getMonedas10PesosDisponibles() < monedas10Necesarias){
-            monedas10Necesarias = cambio.getMonedas10PesosDisponibles();
+        if(cambio.getMonedas10Pesos() < monedas10Necesarias){
+            monedas10Necesarias = cambio.getMonedas10Pesos();
         }
         cambioNecesarioParcial = cambioNecesarioParcial - (monedas10Necesarias * 10);
         int monedas5Necesarias = (int)cambioNecesarioParcial / 5;  
-        if(cambio.getMonedas5PesosDisponibles() < monedas5Necesarias){
-            monedas5Necesarias = cambio.getMonedas5PesosDisponibles();
+        if(cambio.getMonedas5Pesos() < monedas5Necesarias){
+            monedas5Necesarias = cambio.getMonedas5Pesos();
         }
         cambioNecesarioParcial = cambioNecesarioParcial - (monedas5Necesarias * 5);
         int monedas2Necesarias = (int)cambioNecesarioParcial / 2;
-        if(cambio.getMonedas2PesosDisponibles() < monedas2Necesarias){
-            monedas2Necesarias = cambio.getMonedas2PesosDisponibles();
+        if(cambio.getMonedas2Pesos() < monedas2Necesarias){
+            monedas2Necesarias = cambio.getMonedas2Pesos();
         }
         cambioNecesarioParcial = cambioNecesarioParcial - (monedas2Necesarias * 2);
         int monedas1Necesarias = (int)cambioNecesarioParcial / 1;
-        if(cambio.getMonedasPesoDisponibles() < monedas1Necesarias){
-            monedas1Necesarias = cambio.getMonedasPesoDisponibles();
+        if(cambio.getMonedasPeso() < monedas1Necesarias){
+            monedas1Necesarias = cambio.getMonedasPeso();
         }
         cambioNecesarioParcial = cambioNecesarioParcial - monedas1Necesarias;
         if(cambioNecesarioParcial == 0){
             Cambio cambioParaDevolver = new Cambio(monedas1Necesarias, monedas2Necesarias,
                                             monedas5Necesarias, monedas10Necesarias);
+            disminuirCambio(cambioParaDevolver);
             return cambioParaDevolver;
         }
         else {
@@ -80,4 +83,10 @@ public class ControladorOrdenes {
         }
     }   
     
+    private void disminuirCambio(Cambio cambioDevuelto){
+        cambio.setMonedas10Pesos(cambio.getMonedas10Pesos() - cambioDevuelto.getMonedas10Pesos());
+        cambio.setMonedas5Pesos(cambio.getMonedas5Pesos() - cambioDevuelto.getMonedas5Pesos());
+        cambio.setMonedas2Pesos(cambio.getMonedas2Pesos() - cambioDevuelto.getMonedas2Pesos());
+        cambio.setMonedasPeso(cambio.getMonedasPeso() - cambioDevuelto.getMonedasPeso());
+    }
 }

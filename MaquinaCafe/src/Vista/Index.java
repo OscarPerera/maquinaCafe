@@ -302,9 +302,10 @@ public class Index extends javax.swing.JFrame {
 
     private void cancelarbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelarbtnMouseClicked
         // TODO add your handling code here:
-        dineroIntroducidotxt.setText("0.0");
-        costoOrdentxt.setText("0.0");
-        cafeSeleccionadotxt.setText("");
+        int confirmacionCancelacion = JOptionPane.showConfirmDialog(null, "¿Desea cancelar su orden?");
+        if(confirmacionCancelacion == 0){
+            limpiarPantalla();
+        }
     }//GEN-LAST:event_cancelarbtnMouseClicked
 
     private void diezPesosbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diezPesosbtnMouseClicked
@@ -351,6 +352,9 @@ public class Index extends javax.swing.JFrame {
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
         String respuestaOrden = controlador.nuevaOrden(nuevaOrden);
+        if(!respuestaOrden.substring(0, 5).equals("Error")){
+            limpiarPantalla();
+        }
         JOptionPane.showMessageDialog(null, respuestaOrden);
 
     }//GEN-LAST:event_confirmarbtnMouseClicked
@@ -359,6 +363,11 @@ public class Index extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cafeSeleccionadotxtActionPerformed
 
+    private void limpiarPantalla(){
+        dineroIntroducidotxt.setText("0.0");
+        costoOrdentxt.setText("0.0");
+        cafeSeleccionadotxt.setText("");
+    }
     /**
      * @param args the command line arguments
      */

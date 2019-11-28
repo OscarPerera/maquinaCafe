@@ -23,19 +23,19 @@ public class Cambio {
         this.Monedas10Pesos =   Monedas10Pesos;    
     }
 
-    public int getMonedasPesoDisponibles() {
+    public int getMonedasPeso() {
         return MonedasPeso;
     }
     
-    public int getMonedas2PesosDisponibles() {
+    public int getMonedas2Pesos() {
         return Monedas2Pesos;
     }
 
-    public int getMonedas5PesosDisponibles() {
+    public int getMonedas5Pesos() {
         return Monedas5Pesos;
     }
 
-    public int getMonedas10PesosDisponibles() {
+    public int getMonedas10Pesos() {
         return Monedas10Pesos;
     }
 
@@ -57,7 +57,20 @@ public class Cambio {
 
     @Override
     public String toString() {
-        return "1 Peso: " + MonedasPeso + "\n2 Pesos: " + Monedas2Pesos + "\n5 Pesos: " + Monedas5Pesos + "\n10 Pesos: " + Monedas10Pesos;
+        String respuesta = "";
+        if(MonedasPeso > 0){
+            respuesta = respuesta + "Monedas de 1 Peso: " + MonedasPeso + "\n";
+        }
+        if(Monedas2Pesos > 0){
+            respuesta = respuesta + "Monedas de 2 Pesos: " + Monedas2Pesos + "\n";
+        }
+        if(Monedas5Pesos > 0){
+            respuesta = respuesta + "Monedas de 5 Pesos: " + Monedas5Pesos + "\n";
+        }
+        if(Monedas10Pesos > 0){
+            respuesta = respuesta + "Monedas de 10 Pesos: " + Monedas10Pesos + "\n";
+        }
+        return respuesta;
     }
 
 }
