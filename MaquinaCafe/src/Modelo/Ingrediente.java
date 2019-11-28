@@ -13,9 +13,9 @@ public class Ingrediente {
     private final int cantidadInicial;
     private int cantidadDisponible;
 
-    public Ingrediente(int cantidadInicial, int cantidadDisponible) {
+    public Ingrediente(int cantidadInicial) {
         this.cantidadInicial = cantidadInicial;
-        this.cantidadDisponible = cantidadDisponible;
+        this.cantidadDisponible = cantidadInicial;
     }
 
     public int getCantidadInicial() {

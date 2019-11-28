@@ -14,11 +14,4 @@ import java.util.ArrayList;
 public class ReporteProductos {
     
     
-    
-   public void ObtenerDatos(){
-       
-   }
-    
- 
-    
 }
