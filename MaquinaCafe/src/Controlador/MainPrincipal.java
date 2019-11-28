@@ -17,7 +17,7 @@ public class MainPrincipal {
     public static ControladorOrdenes controlador;
 
     
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Cambio cambio = new Cambio(10, 10, 10, 10);
         controlador = new ControladorOrdenes(cambio);
         Index index = new Index();

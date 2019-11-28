@@ -21,8 +21,6 @@ public class Orden {
     private int cucharadasAzucar;
     private String fecha;
     private double dineroCambio;
-    
-    
 
     public Orden(double dineroIngresado, double costoOrden, String tipoCafe, int cucharadasAzucar) {
         this.dineroIngresado = dineroIngresado;
@@ -30,7 +28,7 @@ public class Orden {
         this.tipoCafe = tipoCafe;
         this.cucharadasAzucar = cucharadasAzucar;
         fecha = FechaConHora();
-        dineroCambio = CantidadCambio();
+        dineroCambio = devolverCambio();
     }  
     
    public String FechaConHora()
@@ -40,10 +38,8 @@ public class Orden {
        return hourdateFormat.format(date);
        
     }
-   
-   
-  
-   public double CantidadCambio()
+
+   public double devolverCambio()
    {
        double cambio = dineroIngresado - costoOrden;
        return cambio;

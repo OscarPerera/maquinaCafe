@@ -38,34 +38,33 @@ public class Cambio {
     public int getMonedas10PesosDisponibles() {
         return Monedas10Pesos;
     }
-    
-    //Posiblemente varios inline method.
-    public int disminuirMonedasPeso(){
-        MonedasPeso = MonedasPeso - 1;
-        return MonedasPeso;
+
+    public void setMonedasPeso(int MonedasPeso) {
+        this.MonedasPeso = MonedasPeso;
     }
-     public int disminuirMonedas2Pesos(){
-        Monedas2Pesos = Monedas2Pesos - 1;
-        return Monedas2Pesos;
+
+    public void setMonedas2Pesos(int Monedas2Pesos) {
+        this.Monedas2Pesos = Monedas2Pesos;
     }
-     public int disminuirMonedas5Pesos(){
-        Monedas5Pesos = Monedas5Pesos - 1;
-        return Monedas5Pesos;
+
+    public void setMonedas5Pesos(int Monedas5Pesos) {
+        this.Monedas5Pesos = Monedas5Pesos;
     }
-     public int disminuirMonedas10Pesos(){
-       Monedas10Pesos = Monedas10Pesos - 1;
-       return Monedas10Pesos;
+
+    public void setMonedas10Pesos(int Monedas10Pesos) {
+        this.Monedas10Pesos = Monedas10Pesos;
+    }
+
+    @Override
+    public String toString() {
+        return "1 Peso: " + MonedasPeso + "\n2 Pesos: " + Monedas2Pesos + "\n5 Pesos: " + Monedas5Pesos + "\n10 Pesos: " + Monedas10Pesos;
     }
      
-     
-     
-     public void ReportarCambio(){
-         
-         System.out.println("Datos Iniciales:");
-         System.out.println("Cantidad de monedas de peso:");
-         System.out.println("Cantidad de monedas de 2 pesos:");
-         System.out.println("Cantidad de monedas de 5 pesos:");
-         System.out.println("Cantidad de monedas de 10 pesos:");
-     }
-    
+    public void ReportarCambio(){        
+        System.out.println("Datos Iniciales:");
+        System.out.println("Cantidad de monedas de peso:");
+        System.out.println("Cantidad de monedas de 2 pesos:");
+        System.out.println("Cantidad de monedas de 5 pesos:");
+        System.out.println("Cantidad de monedas de 10 pesos:");
+    }    
 }
