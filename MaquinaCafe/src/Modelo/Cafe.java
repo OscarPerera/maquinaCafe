@@ -44,6 +44,17 @@ public class Cafe{
     public void setCapuccino(Capsula capuccino) {
         this.capuccino = capuccino;
     }
+
+    @Override
+    public String toString() {
+       
+        return "CaféDescafeinado :"+descafeinado.toString()+ "CaféNegro: " + negro.toString() + "CaféCapuccino: " + capuccino.toString();
+             
+    }
+    
+    
+    
+   
     
     
 }

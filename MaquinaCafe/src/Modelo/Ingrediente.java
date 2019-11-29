@@ -29,4 +29,11 @@ public class Ingrediente {
     public void setCantidadDisponible(int cantidadDisponible) {
         this.cantidadDisponible = cantidadDisponible;
     }
+
+    @Override
+    public String toString() {
+        return  "cantidadInicial: " + cantidadInicial + ", cantidadDisponible:" + cantidadDisponible ;
+    }
+    
+    
 }

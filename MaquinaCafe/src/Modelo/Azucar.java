@@ -18,4 +18,11 @@ public class Azucar extends Ingrediente{
     public void agregarCucharadas(int cantidadDeCucharadas){
         super.setCantidadDisponible(super.getCantidadDisponible() - cantidadDeCucharadas);
     }
+
+    @Override
+    public String toString() {
+        return "Azucar \n "+super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

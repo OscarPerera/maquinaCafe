@@ -17,12 +17,14 @@ public class ControladorOrdenes {
     private ControladorReportes controladorReportes;
     private double ganancias = 0;
     
+    
     public ControladorOrdenes(Cambio cambio) {
         this.cambioInicial = cambio;
         this.cambio = cambio;
         controladorReportes = new ControladorReportes();
     }
     
+    //Es correcto este anidamiento?
     public String nuevaOrden(Orden nuevaOrden){   
         Cambio cambioDeOrden = darCambio(nuevaOrden.devolverCambio());
         if(!nuevaOrden.getTipoCafe().equals("")){
@@ -88,5 +90,22 @@ public class ControladorOrdenes {
         cambio.setMonedas5Pesos(cambio.getMonedas5Pesos() - cambioDevuelto.getMonedas5Pesos());
         cambio.setMonedas2Pesos(cambio.getMonedas2Pesos() - cambioDevuelto.getMonedas2Pesos());
         cambio.setMonedasPeso(cambio.getMonedasPeso() - cambioDevuelto.getMonedasPeso());
+    }
+    
+    
+    public String obtenerReporteOrdenes(){
+        
+        return controladorReportes.ObtenerReporteOrdenes();
+    }
+    
+    public String obtenerReporteIngredientes(){
+        
+        return controladorReportes.ObtenerReporteIngredientes();
+    }
+    
+    public String obtenerReporteCambio(){
+        return "Cambio Inicial: \n " + cambio.cambioInicial()
+                + "\n\n CambioDisponible: " + cambio.toString();
+        
     }
 }

@@ -11,16 +11,30 @@ package Modelo;
  */
 public class Cambio {
     
+    final int MonedasPesoIniciales; 
+    final int Monedas2PesosIniciales;
+    final int Monedas5PesosIniciales;
+    final int Monedas10PesosIniciales;
+    
     int MonedasPeso;
     int Monedas2Pesos;
     int Monedas5Pesos;
     int Monedas10Pesos;
+    
+    
           
     public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, int Monedas10Pesos) {      
         this.MonedasPeso = MonedasPeso ;
         this.Monedas2Pesos =  Monedas2Pesos;
         this.Monedas5Pesos =  Monedas5Pesos ;
-        this.Monedas10Pesos =   Monedas10Pesos;    
+        this.Monedas10Pesos =   Monedas10Pesos;  
+        
+         MonedasPesoIniciales = MonedasPeso; 
+         Monedas2PesosIniciales = Monedas2Pesos;
+         Monedas5PesosIniciales = Monedas5Pesos;
+         Monedas10PesosIniciales = Monedas10Pesos;
+   
+        
     }
 
     public int getMonedasPeso() {
@@ -71,6 +85,15 @@ public class Cambio {
             respuesta = respuesta + "Monedas de 10 Pesos: " + Monedas10Pesos + "\n";
         }
         return respuesta;
+    }
+    
+    
+    public String cambioInicial(){
+       
+        String cambioInicial = "Monedas de 1 Peso: \n " + MonedasPesoIniciales + "Monedas de 2 Pesos: \n " +
+                Monedas2PesosIniciales + "Monedas de 5 Pesos: \n " + Monedas5PesosIniciales + "Monedas de 10 Pesos: \n " + Monedas10PesosIniciales;
+        
+        return cambioInicial;
     }
 
 }

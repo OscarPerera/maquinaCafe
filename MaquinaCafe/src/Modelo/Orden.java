@@ -93,6 +93,6 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "dineroIngresado=" + dineroIngresado + ", costoOrden=" + costoOrden + ", tipoCafe=" + tipoCafe + ", cucharadasAzucar=" + cucharadasAzucar + ", fecha=" + fecha + ", dineroCambio=" + dineroCambio + '}';
+        return "Orden: \n" + "dineroIngresado: " + dineroIngresado + " \n costoOrden: " + costoOrden + "\n tipoCafe: " + tipoCafe + "\n cucharadasAzucar: " + cucharadasAzucar + "\n fecha: " + fecha + "\n dineroCambio:" + dineroCambio ;
     } 
 }

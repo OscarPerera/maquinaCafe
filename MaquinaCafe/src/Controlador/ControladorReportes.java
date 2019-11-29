@@ -8,6 +8,7 @@ package Controlador;
 
 import Modelo.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -46,7 +47,7 @@ public class ControladorReportes {
         int cucharadasAzucar = nuevaOrden.getCucharadasAzucar();
         if(getAzucar().getCantidadDisponible() >= cucharadasAzucar){
             String tipoCafe = nuevaOrden.getTipoCafe();
-            if(tipoCafe == "capuccino"){
+            if(tipoCafe.equals("capuccino") ){
                 if(getCafe().getCapuccino().getCantidadDisponible() > 0){
                     registrarOrden(nuevaOrden);
                     getCafe().getCapuccino().PrepararCafe();
@@ -57,7 +58,7 @@ public class ControladorReportes {
                     return false;
                 }
             }
-            else if(tipoCafe == "negro") {
+            else if(tipoCafe.equals("negro")) {
                     if(getCafe().getNegro().getCantidadDisponible() > 0){
                     registrarOrden(nuevaOrden);
                     getCafe().getNegro().PrepararCafe();
@@ -86,7 +87,33 @@ public class ControladorReportes {
     }
     
     public void registrarOrden(Orden nuevaOrden){
-        System.out.println(nuevaOrden);
+        //System.out.println(nuevaOrden);
         ListaOrdenes.add(nuevaOrden);
     }  
+    
+    public String ObtenerReporteOrdenes(){
+        String reporteOrdenes="";
+        Iterator<Orden> ordenActual = ListaOrdenes.iterator();
+
+        while(ordenActual.hasNext()){
+            Orden objeto=ordenActual.next();
+            reporteOrdenes = reporteOrdenes+objeto.toString()+"\n";
+           
+            
+        }
+        return reporteOrdenes;
+}
+    
+    public String ObtenerReporteIngredientes(){
+        
+        String reporteIngredientes;
+        
+        reporteIngredientes = cafe.toString()+"\n"+azucar.toString();
+        
+        
+        return reporteIngredientes;
+    }
+    
+    
+    
 }

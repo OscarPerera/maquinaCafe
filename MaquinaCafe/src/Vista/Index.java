@@ -192,9 +192,25 @@ public class Index extends javax.swing.JFrame {
         btnImprimirReportes.setBackground(new java.awt.Color(165, 136, 85));
         btnImprimirReportes.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         btnImprimirReportes.setText("Imprimir Reportes");
+        btnImprimirReportes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnImprimirReportesMouseClicked(evt);
+            }
+        });
+        btnImprimirReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirReportesActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel2.setText("Reportes");
+
+        txtReporteVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReporteVentasActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jLabel3.setText("Reporte de productos vendidos:");
@@ -260,7 +276,6 @@ public class Index extends javax.swing.JFrame {
                                         .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(btnImprimirReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
@@ -391,11 +406,12 @@ public class Index extends javax.swing.JFrame {
         double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
         double costoOrden = Double.parseDouble(costoOrdentxt.getText());
         String tipoCafe = cafeSeleccionadotxt.getText();
+        System.out.print(tipoCafe);
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
         String respuestaOrden = controlador.nuevaOrden(nuevaOrden);
         if(!respuestaOrden.substring(0, 5).equals("Error")){
-            limpiarPantalla();
+            limpiarPantalla(); 
         }
         JOptionPane.showMessageDialog(null, respuestaOrden);
     }//GEN-LAST:event_btnConfirmarMouseClicked
@@ -403,6 +419,29 @@ public class Index extends javax.swing.JFrame {
     private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cafeSeleccionadotxtActionPerformed
+
+    private void btnImprimirReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirReportesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnImprimirReportesActionPerformed
+
+    private void btnImprimirReportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImprimirReportesMouseClicked
+        // TODO add your handling code here:
+        
+        txtReporteVentas.setText(controlador.obtenerReporteOrdenes());
+        
+        txtReporteIngredientes.setText(controlador.obtenerReporteIngredientes());
+        
+        txtReporteCambio.setText(controlador.obtenerReporteCambio());
+        
+        /*
+        String reporteCambios = controlador.ReporteCambio();
+        String reporteIngredientes = controlador.ReporteIngrediente();
+        */
+    }//GEN-LAST:event_btnImprimirReportesMouseClicked
+
+    private void txtReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReporteVentasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReporteVentasActionPerformed
 
     private void limpiarPantalla(){
         dineroIntroducidotxt.setText("0.0");
