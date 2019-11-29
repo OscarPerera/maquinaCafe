@@ -94,26 +94,18 @@ public class ControladorReportes {
     public String ObtenerReporteOrdenes(){
         String reporteOrdenes="";
         Iterator<Orden> ordenActual = ListaOrdenes.iterator();
-
+        int indice = 1;
         while(ordenActual.hasNext()){
-            Orden objeto=ordenActual.next();
-            reporteOrdenes = reporteOrdenes+objeto.toString()+"\n";
-           
-            
+            Orden ordenIndice = ordenActual.next();
+            reporteOrdenes = reporteOrdenes + "Orden " + indice + ordenIndice.toString()+  "\n";
+            indice++;
         }
         return reporteOrdenes;
 }
     
-    public String ObtenerReporteIngredientes(){
-        
-        String reporteIngredientes;
-        
-        reporteIngredientes = cafe.toString()+"\n"+azucar.toString();
-        
-        
+    public String ObtenerReporteIngredientes(){       
+        String reporteIngredientes;       
+        reporteIngredientes = cafe.toString() + azucar.toString();      
         return reporteIngredientes;
-    }
-    
-    
-    
+    }   
 }

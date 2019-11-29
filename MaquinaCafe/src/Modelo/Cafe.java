@@ -46,15 +46,9 @@ public class Cafe{
     }
 
     @Override
-    public String toString() {
-       
-        return "CaféDescafeinado :"+descafeinado.toString()+ "CaféNegro: " + negro.toString() + "CaféCapuccino: " + capuccino.toString();
+    public String toString() {      
+        return "Café Descafeinado :\n" + descafeinado.toString()+ "Café Negro: \n" + 
+                negro.toString() + "Café Capuccino: \n" + capuccino.toString();
              
-    }
-    
-    
-    
-   
-    
-    
+    } 
 }
