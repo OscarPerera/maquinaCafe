@@ -12,15 +12,13 @@ import Modelo.*;
  * @author zeusj
  */
 public class ControladorOrdenes {
-    private final Cambio cambioInicial;
     private Cambio cambio;
     private ControladorReportes controladorReportes;
     private double ganancias = 0;
     
     
-    public ControladorOrdenes(Cambio cambio) {
-        this.cambioInicial = cambio;
-        this.cambio = cambio;
+    public ControladorOrdenes(Cambio nuevoCambio) {
+        this.cambio = nuevoCambio;
         controladorReportes = new ControladorReportes();
     }
     
@@ -91,21 +89,17 @@ public class ControladorOrdenes {
         cambio.setMonedas2Pesos(cambio.getMonedas2Pesos() - cambioDevuelto.getMonedas2Pesos());
         cambio.setMonedasPeso(cambio.getMonedasPeso() - cambioDevuelto.getMonedasPeso());
     }
-    
-    
-    public String obtenerReporteOrdenes(){
-        
+     
+    public String obtenerReporteOrdenes(){        
         return controladorReportes.ObtenerReporteOrdenes();
     }
     
-    public String obtenerReporteIngredientes(){
-        
+    public String obtenerReporteIngredientes(){        
         return controladorReportes.ObtenerReporteIngredientes();
     }
     
     public String obtenerReporteCambio(){
-        return "Cambio Inicial: \n " + cambio.cambioInicial()
-                + "\n\n CambioDisponible: " + cambio.toString();
-        
+        return "Cambio Inicial: \n" + cambio.cambioInicialToString()
+                + "\nCambioDisponible: \n" + cambio.toString();        
     }
 }

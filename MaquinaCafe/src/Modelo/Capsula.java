@@ -21,10 +21,6 @@ public class Capsula extends Ingrediente{
 
     @Override
     public String toString() {
-        return super.toString(); 
-    }
-    
-    
-    
-        
+        return super.toString() + "\n"; 
+    }      
 }

@@ -32,7 +32,8 @@ public class Ingrediente {
 
     @Override
     public String toString() {
-        return  "cantidadInicial: " + cantidadInicial + ", cantidadDisponible:" + cantidadDisponible ;
+        return  "Cantidad Inicial: " + cantidadInicial + "\nCantidad Disponible: " 
+                + cantidadDisponible  + "\n";
     }
     
     
