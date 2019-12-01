@@ -27,6 +27,9 @@ public class Index extends javax.swing.JFrame {
         inicializarAzucarComboBox();
         this.getContentPane().setBackground(java.awt.Color.getHSBColor(38, 48, 65));
         controlador = MainPrincipal.controlador;
+        cafeSeleccionadotxt.setEditable(false);
+        costoOrdentxt.setEditable(false);
+        dineroIntroducidotxt.setEditable(false);
     }
 
     private void inicializarAzucarComboBox(){
@@ -35,7 +38,8 @@ public class Index extends javax.swing.JFrame {
         cucharadasAzucarbox.addItem("1");
         cucharadasAzucarbox.addItem("2");
         cucharadasAzucarbox.addItem("3");
-        cucharadasAzucarbox.addItem("4");    
+        cucharadasAzucarbox.addItem("4");  
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -430,7 +434,6 @@ public class Index extends javax.swing.JFrame {
         double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
         double costoOrden = Double.parseDouble(costoOrdentxt.getText());
         String tipoCafe = cafeSeleccionadotxt.getText();
-        System.out.print(tipoCafe);
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
         String respuestaOrden = controlador.nuevaOrden(nuevaOrden);

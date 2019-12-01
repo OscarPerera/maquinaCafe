@@ -34,7 +34,5 @@ public class Ingrediente {
     public String toString() {
         return  "Cantidad Inicial: " + cantidadInicial + "\nCantidad Disponible: " 
                 + cantidadDisponible  + "\n";
-    }
-    
-    
+    }  
 }
