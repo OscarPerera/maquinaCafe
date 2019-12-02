@@ -7,9 +7,6 @@ package Vista;
 
 import Controlador.*;
 import Modelo.*;
-import java.awt.event.ActionListener;
-import javafx.scene.paint.Color;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -387,6 +384,7 @@ public class Index extends javax.swing.JFrame {
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         // TODO add your handling code here:
         int confirmacionCancelacion = JOptionPane.showConfirmDialog(null, "¿Desea cancelar su orden?");
+        
         if(confirmacionCancelacion == 0){
             limpiarPantalla();
         }
@@ -435,8 +433,10 @@ public class Index extends javax.swing.JFrame {
         double costoOrden = Double.parseDouble(costoOrdentxt.getText());
         String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
+    
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
-        String respuestaOrden = controlador.nuevaOrden(nuevaOrden);
+        String respuestaOrden = controlador.generarNuevaOrden(nuevaOrden);
+        
         if(!respuestaOrden.substring(0, 5).equals("Error")){
             limpiarPantalla(); 
         }
@@ -456,10 +456,6 @@ public class Index extends javax.swing.JFrame {
         txtReporteVentas.setText(controlador.obtenerReporteOrdenes());    
         txtReporteIngredientes.setText(controlador.obtenerReporteIngredientes());       
         txtReporteCambio.setText(controlador.obtenerReporteCambio());      
-        /*
-        String reporteCambios = controlador.ReporteCambio();
-        String reporteIngredientes = controlador.ReporteIngrediente();
-        */
     }//GEN-LAST:event_btnImprimirReportesMouseClicked
 
     private void limpiarAreaReportesbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarAreaReportesbtnMouseClicked

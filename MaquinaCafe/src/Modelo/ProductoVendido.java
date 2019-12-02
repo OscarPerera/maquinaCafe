@@ -10,9 +10,8 @@ package Modelo;
  * @author Oscar Perera
  */
 public class ProductoVendido {
-    
-    Capsula cafeVendido ;
     int gramosAzucar;
+    Capsula cafeVendido ;
 
     public ProductoVendido(Capsula cafeVendido, int gramosAzucar) {
         this.cafeVendido = cafeVendido;

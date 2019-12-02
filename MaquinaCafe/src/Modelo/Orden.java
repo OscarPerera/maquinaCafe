@@ -22,18 +22,20 @@ public class Orden {
     private String fecha;
     private double dineroCambio;
 
-    public Orden(double dineroIngresado, double costoOrden, String tipoCafe, int cucharadasAzucar) {
+    public Orden(double dineroIngresado, double costoOrden, String tipoCafe, 
+            int cucharadasAzucar) {
         this.dineroIngresado = dineroIngresado;
         this.costoOrden = costoOrden;
         this.tipoCafe = tipoCafe;
         this.cucharadasAzucar = cucharadasAzucar;
-        fecha = FechaConHora();
+        fecha = getFechaConHora();
         dineroCambio = devolverCambio();
     }  
     
-   public String FechaConHora(){
+   public String getFechaConHora(){
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+        
        return hourdateFormat.format(date);
        
     }
@@ -94,7 +96,8 @@ public class Orden {
     @Override
     public String toString() {
         return "\nDinero Ingresado: " + dineroIngresado + " \n Costo de la Orden: " 
-                + costoOrden + "\n Tipo de Cafe: " + tipoCafe + "\n Cucharadas de Azucar: " 
-                + cucharadasAzucar + "\n Fecha: " + fecha + "\n Dinero de Cambio: " + dineroCambio  + "\n";
+                + costoOrden + "\n Tipo de Cafe: " + tipoCafe 
+                + "\n Cucharadas de Azucar: " + cucharadasAzucar + "\n Fecha: " 
+                + fecha + "\n Dinero de Cambio: " + dineroCambio  + "\n";
     } 
 }
