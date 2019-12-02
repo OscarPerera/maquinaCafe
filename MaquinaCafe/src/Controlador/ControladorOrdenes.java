@@ -8,19 +8,31 @@ package Controlador;
 import Modelo.*;
 
 /**
- *
- * @author zeusj
+ * Clase encargada del control de las órdenes.
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
 public class ControladorOrdenes {
     private double ganancias = 0;
     private Cambio cambio;
     private ControladorReportes controladorReportes;
-    
+    /**
+     * Constructor de la clase ControladorOrdenes
+     * @param nuevoCambio Parametro de tipo Cambio el cuál servirá para determinar
+     * el cambio final del usuario
+     */
     public ControladorOrdenes(Cambio nuevoCambio) {
         this.cambio = nuevoCambio;
         controladorReportes = new ControladorReportes();
     }
-    
+    /**
+     * Metodo que generará una nueva orden y tras eso, determinará si se realizó 
+     * de manera correcta o existio algun error en el  proceso.
+     * @param nuevaOrden Orden que se recibe y tras la cual se genera el mensaje 
+     * @return Devuelve una cadena que representará el mensaje a mostrar al usuario
+     * dependiendo de las condiciones de su orden.
+     */
     public String generarNuevaOrden(Orden nuevaOrden){
         Orden ordenEntrante=nuevaOrden;
         Cambio cambioDeOrden = darCambio(ordenEntrante.devolverCambio());
@@ -50,8 +62,13 @@ public class ControladorOrdenes {
             return "Error: Por favor, seleccione un producto";
         }             
     }
-    
-    private Cambio darCambio(double cambioNecesario){
+    /**
+     * Metodo que determina la cantidad de monedas de cada denominación a devolver
+     * @param cambioNecesario double que representa el cambio total que se debe de
+     * devolver en las diferentes denominaciones
+     * @return Objeto con las diferentes denominaciones a devolver
+     */
+    public Cambio darCambio(double cambioNecesario){
         int cambioNecesarioParcial = (int)cambioNecesario;
         int monedas10Necesarias = (int)cambioNecesario / 10;
         int monedas5Necesarias;
@@ -91,8 +108,13 @@ public class ControladorOrdenes {
             return null;
         }
     }   
-    
-    private void disminuirCambio(Cambio cambioDevuelto){
+    /**
+     * Método que resta del total de monedas de cada denominación la cantidad de 
+     * monedas a devolver tras cada orden
+     * @param cambioDevuelto Objeto de tipo Cambio con la cantidad de monedas de cada
+     * denominación que se devolverá al usuario
+     */
+    public void disminuirCambio(Cambio cambioDevuelto){
         Cambio cambioFinal=cambioDevuelto;
         cambio.setMonedas10Pesos(cambio.getMonedas10Pesos() - 
                 cambioFinal.getMonedas10Pesos());
@@ -103,15 +125,24 @@ public class ControladorOrdenes {
         cambio.setMonedasPeso(cambio.getMonedasPeso() - 
                 cambioFinal.getMonedasPeso());
     }
-     
+     /**
+      * Metodo que retorna el reporte de las ordenes totales
+     * @return String con el Reporte de las ordenes realizadas
+      */
     public String obtenerReporteOrdenes(){        
         return controladorReportes.ObtenerReporteOrdenes();
     }
-    
+    /**
+     * Metodo que retorna el reporte de los ingredientes totales usados
+     * @return String con el Reporte de los ingredientes utilizados
+     */
     public String obtenerReporteIngredientes(){        
         return controladorReportes.ObtenerReporteIngredientes();
     }
-    
+    /**
+     * Metodo que retorna el reporte de los cambios totales
+     * @return String con el reporte de los diferentes cambios devueltos
+     */
     public String obtenerReporteCambio(){
         return "Cambio Inicial: \n" + cambio.setCambioInicialToString()
                 + "\nCambioDisponible: \n" + cambio.toString();        

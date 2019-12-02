@@ -11,14 +11,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
- *
- * @author zeusj
+ * Clase encargada de la presentacion visual del programa
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
 public class Index extends javax.swing.JFrame {
     ControladorOrdenes controlador;
   
     /**
-     * Creates new form index
+     * Constructor en el cual se inicializan los componentes y algunas propiedades
+     * de la vista.
      */
     public Index() {
         initComponents();
@@ -431,6 +434,11 @@ public class Index extends javax.swing.JFrame {
         colocarTexto(cafeSeleccionadotxt,"negro");
     }//GEN-LAST:event_negrobtnMouseClicked
     
+    /**
+     * Metodo que agiliza el establecimiento de un mensaje en un JTextField
+     * @param campo JTextField en el que se colocará el mensaje deseado
+     * @param mensaje String que establece el mensaje que se desea mostrar
+     */
     public void colocarTexto(JTextField campo, String mensaje){
         campo.setText(mensaje);
     }
@@ -448,8 +456,13 @@ public class Index extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, respuestaOrden);
     }//GEN-LAST:event_btnConfirmarMouseClicked
-    
-    private boolean existeError(String mensaje){
+    /**
+     * Metodo que sirve para agilizar la comprobación de si el mensaje es igual a
+     * la palabra "ERROR"
+     * @param mensaje String tras la cual se determinará si existe algun error
+     * @return Booleano que representará la existencia de un error o no
+     */
+    public boolean existeError(String mensaje){
         final int PRIMERA_LETRA_ERROR=0;
         final int ULTIMA_LETRA_ERROR=5;
         return !mensaje.substring(PRIMERA_LETRA_ERROR, ULTIMA_LETRA_ERROR).equals("Error");
@@ -472,7 +485,10 @@ public class Index extends javax.swing.JFrame {
         txtReporteCambio.setText("");
     }//GEN-LAST:event_limpiarAreaReportesbtnMouseClicked
 
-    private void limpiarPantalla(){
+    /**
+     * Metodo que sirve para el reseteo de los campos de texto
+     */
+    public void limpiarPantalla(){
         colocarTexto(dineroIntroducidotxt,"0.0");
         colocarTexto(costoOrdentxt,"0.0");
         colocarTexto(cafeSeleccionadotxt,"");

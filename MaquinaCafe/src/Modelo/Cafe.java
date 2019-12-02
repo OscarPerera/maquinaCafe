@@ -6,15 +6,27 @@
 package Modelo;
 
 /**
- *
- * @author Oscar Perera
+ *Clase encargada del manejo del café y sus tres tipos:
+ * Negro,Descafeinado y Capuccino
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
 public class Cafe{
 
     private Capsula descafeinado;
     private Capsula negro;
     private Capsula capuccino;
-
+    /**
+     * Constructor que genera un objeto de tipo café, el cual esta compuesto
+     * por los 3 posibles tipos de café disponibles, estos en forma de cápsulas.
+     * @param descafeinado Variable de tipo cápsula que representa una capsula
+     * de tipo descafeinado
+     * @param negro Variable de tipo cápsula que representa una capsula
+     * de tipo negro
+     * @param capuccino Variable de tipo cápsula que representa una capsula
+     * de tipo capuccino
+     */
     public Cafe(Capsula descafeinado, Capsula negro, Capsula capuccino) {
         this.descafeinado = descafeinado;
         this.negro = negro;
@@ -49,6 +61,6 @@ public class Cafe{
     public String toString() {      
         return "Café Descafeinado :\n" + descafeinado.toString()+ "Café Negro: \n" + 
                 negro.toString() + "Café Capuccino: \n" + capuccino.toString();
+    }
              
-    } 
 }

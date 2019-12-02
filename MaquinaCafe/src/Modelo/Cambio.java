@@ -6,8 +6,10 @@
 package Modelo;
 
 /**
- *
- * @author Oscar Perera
+ * Clase encargada del manejo del dinero en todo el sistema
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
 public class Cambio {
     
@@ -19,7 +21,18 @@ public class Cambio {
     int monedas2Pesos;
     int monedas5Pesos;
     int monedas10Pesos;
-      
+    /**
+     * Constructor que genera los objetos de tipo cambio los cuales representan
+     * el dinero a devolver al cliente.
+     * @param MonedasPeso int que representa la cantidad de monedas de peso 
+     * existentes en el cambio para el comprador
+     * @param Monedas2Pesos int que representa la cantidad de monedas de peso 
+     * existentes en el cambio para el comprador
+     * @param Monedas5Pesos  int que representa la cantidad de monedas de 5 pesos 
+     * existentes en el cambio para el comprador   
+     * @param Monedas10Pesos  int que representa la cantidad de monedas de 10
+     * pesos existentes en el cambio para el comprador   
+     */
     public Cambio(int MonedasPeso, int Monedas2Pesos, int Monedas5Pesos, 
             int Monedas10Pesos) {      
         this.monedasPeso = MonedasPeso ;
@@ -63,7 +76,7 @@ public class Cambio {
     public void setMonedas10Pesos(int Monedas10Pesos) {
         this.monedas10Pesos = Monedas10Pesos;
     }
-   
+
     @Override
     public String toString() {
         String respuesta = "";
@@ -82,7 +95,12 @@ public class Cambio {
         }
         return respuesta;
     }
-    
+     /**
+     * Metodo que transforma las monedas iniciales de cada denominacion a una 
+     * cadena para su impresion.
+     * @return Cadena que representa la cantidad de monedas de cada denominación
+     * iniciales
+     */
     public String setCambioInicialToString() {
         String respuesta = "";
         

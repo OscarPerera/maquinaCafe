@@ -7,12 +7,15 @@ package Modelo;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
- *
- * @author zeusj
+ * Clase encargada de la produccion de las diferentes órdenes, estas se componen
+ * del tipo de café, la cantidad de azucar, el costo y el dinero ingresado por el
+ * usuario
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
- /*Podemos observar que en esta clase se mandan tanto el tipo de café como el costo del café,
-  Es debatible si solo se mandarán esos valores o se debería mandar el objeto*/
 public class Orden {
     
     private double dineroIngresado;
@@ -21,7 +24,15 @@ public class Orden {
     private int cucharadasAzucar;
     private String fecha;
     private double dineroCambio;
-
+    /**
+     * Constructor de la clase Orden
+     * @param dineroIngresado Double que representa el total de dinero ingresado
+     * por el usuario para la orden
+     * @param costoOrden Double que representa el costo total del café
+     * @param tipoCafe String que nos indica el tipo de café pedido por el usuario
+     * @param cucharadasAzucar int que indica la cantidad de azucar elegida por el
+     * usuario
+     */
     public Orden(double dineroIngresado, double costoOrden, String tipoCafe, 
             int cucharadasAzucar) {
         this.dineroIngresado = dineroIngresado;
@@ -31,13 +42,15 @@ public class Orden {
         fecha = getFechaConHora();
         dineroCambio = devolverCambio();
     }  
-    
+    /**
+     * Método que genera la fecha y hora en la que la orden es generada
+     * @return Retorna la fecha y hora en la que se genera la orden
+     */
    public String getFechaConHora(){
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
         
-       return hourdateFormat.format(date);
-       
+       return hourdateFormat.format(date); 
     }
 
     public double getDineroIngresado() {
@@ -87,7 +100,11 @@ public class Orden {
     public void setDineroCambio(double dineroCambio) {
         this.dineroCambio = dineroCambio;
     }
-
+    /**
+     * Metodo que devuelve el dinero resultante tras la compra del café
+     * @return Devuelve una variable double que representa el dinero devuelto al
+     * cliente tras la compra del café.
+     */
    public double devolverCambio(){
        double cambio;
        return cambio = dineroIngresado - costoOrden;
@@ -99,5 +116,5 @@ public class Orden {
                 + costoOrden + "\n Tipo de Cafe: " + tipoCafe 
                 + "\n Cucharadas de Azucar: " + cucharadasAzucar + "\n Fecha: " 
                 + fecha + "\n Dinero de Cambio: " + dineroCambio  + "\n";
-    } 
+    }
 }

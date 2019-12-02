@@ -6,11 +6,19 @@
 package Modelo;
 
 /**
- *
- * @author Oscar Perera
+ * Clase que se encarga de las capsulas de café, las cuales componen el 
+ * producto orden final.
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @version 1.0
+ * @since 2019-12-01
  */
 public class Capsula extends Ingrediente{
-
+    /** 
+     * Constructor que genera los objetos de tipo cápsula de café,los cuales sirven
+     * para generar los objetos de tipo orden.
+     * @param cantidadInicial int que determina la cantidad de cápsulas de café con
+     * las que cuenta la máquina al comienzo de la ejecución
+     */
     public Capsula(int cantidadInicial) {
         super(cantidadInicial);
     }
@@ -21,6 +29,6 @@ public class Capsula extends Ingrediente{
 
     @Override
     public String toString() {
-        return super.toString() + "\n"; 
-    }      
+        return super.toString() + "\n";
+    } 
 }
