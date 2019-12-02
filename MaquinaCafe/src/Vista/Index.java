@@ -8,6 +8,7 @@ package Vista;
 import Controlador.*;
 import Modelo.*;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -393,60 +394,66 @@ public class Index extends javax.swing.JFrame {
 
     private void btnDiezPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDiezPesosMouseClicked
         // TODO add your handling code here:
+        final int DIEZ_PESOS=10;
         double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 10));
+        colocarTexto(dineroIntroducidotxt,String.valueOf(dineroActual + DIEZ_PESOS));
     }//GEN-LAST:event_btnDiezPesosMouseClicked
 
     private void btnVeintePesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVeintePesosMouseClicked
         // TODO add your handling code here:
+        final int VEINTE_PESOS=20;
         double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 20));
+        colocarTexto(dineroIntroducidotxt,String.valueOf(dineroActual + VEINTE_PESOS));
     }//GEN-LAST:event_btnVeintePesosMouseClicked
 
     private void btnCincuentaPesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincuentaPesosMouseClicked
         // TODO add your handling code here:
+        final int CINCUENTA_PESOS=50;
         double dineroActual = Double.parseDouble(dineroIntroducidotxt.getText());
-        dineroIntroducidotxt.setText(String.valueOf(dineroActual + 50));
+        colocarTexto(dineroIntroducidotxt,String.valueOf(dineroActual + CINCUENTA_PESOS));
     }//GEN-LAST:event_btnCincuentaPesosMouseClicked
 
     private void capuccinobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_capuccinobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("37.0");
-        cafeSeleccionadotxt.setText("capuccino");
+        colocarTexto(costoOrdentxt,"37.0");
+        colocarTexto(cafeSeleccionadotxt,"capuccino");
     }//GEN-LAST:event_capuccinobtnMouseClicked
 
     private void descafeinadobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_descafeinadobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("35.0");
-        cafeSeleccionadotxt.setText("descafeinado");
+        colocarTexto(costoOrdentxt,"35.0");
+        colocarTexto(cafeSeleccionadotxt,"descafeinado");
     }//GEN-LAST:event_descafeinadobtnMouseClicked
 
     private void negrobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_negrobtnMouseClicked
         // TODO add your handling code here:
-        costoOrdentxt.setText("33.0");
-        cafeSeleccionadotxt.setText("negro");
+        colocarTexto(costoOrdentxt,"33.0");
+        colocarTexto(cafeSeleccionadotxt,"negro");
     }//GEN-LAST:event_negrobtnMouseClicked
-
+    
+    public void colocarTexto(JTextField campo, String mensaje){
+        campo.setText(mensaje);
+    }
     private void btnConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConfirmarMouseClicked
         // TODO add your handling code here:
         double dineroIngresado = Double.parseDouble(dineroIntroducidotxt.getText());
         double costoOrden = Double.parseDouble(costoOrdentxt.getText());
         String tipoCafe = cafeSeleccionadotxt.getText();
         int cucharadasAzucar = Integer.parseInt(cucharadasAzucarbox.getSelectedItem().toString());
-    
         Orden nuevaOrden = new Orden(dineroIngresado,costoOrden, tipoCafe, cucharadasAzucar);
         String respuestaOrden = controlador.generarNuevaOrden(nuevaOrden);
         
-        if(!respuestaOrden.substring(0, 5).equals("Error")){
+        if(existeError(respuestaOrden)){
             limpiarPantalla(); 
         }
         JOptionPane.showMessageDialog(null, respuestaOrden);
     }//GEN-LAST:event_btnConfirmarMouseClicked
-
-    private void cafeSeleccionadotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cafeSeleccionadotxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cafeSeleccionadotxtActionPerformed
-
+    
+    private boolean existeError(String mensaje){
+        final int PRIMERA_LETRA_ERROR=0;
+        final int ULTIMA_LETRA_ERROR=5;
+        return !mensaje.substring(PRIMERA_LETRA_ERROR, ULTIMA_LETRA_ERROR).equals("Error");
+    }
     private void btnImprimirReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirReportesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnImprimirReportesActionPerformed
@@ -466,9 +473,9 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_limpiarAreaReportesbtnMouseClicked
 
     private void limpiarPantalla(){
-        dineroIntroducidotxt.setText("0.0");
-        costoOrdentxt.setText("0.0");
-        cafeSeleccionadotxt.setText("");
+        colocarTexto(dineroIntroducidotxt,"0.0");
+        colocarTexto(costoOrdentxt,"0.0");
+        colocarTexto(cafeSeleccionadotxt,"");
         cucharadasAzucarbox.setSelectedIndex(0);
     }
     /**

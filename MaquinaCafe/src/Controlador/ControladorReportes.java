@@ -43,41 +43,42 @@ public class ControladorReportes {
     }
     
     public boolean AgregarOrden(Orden nuevaOrden){
+        Orden newOrden=nuevaOrden;
         int cucharadasAzucar = nuevaOrden.getCucharadasAzucar();
         String tipoCafe;
+        final int CANTIDAD_MINIMA=0;
         
         if(getAzucar().getCantidadDisponible() >= cucharadasAzucar){
-            tipoCafe = nuevaOrden.getTipoCafe();
+            tipoCafe = newOrden.getTipoCafe();
             
-            if(tipoCafe.equals("capuccino") ){
-                if(getCafe().getCapuccino().getCantidadDisponible() > 0){
-                    registrarOrden(nuevaOrden);
-                    getCafe().getCapuccino().PrepararCafe();
-                    getAzucar().agregarCucharadas(cucharadasAzucar);
-                    return true;
-                }else {
-                    return false;
-                }
-            }
-            else if(tipoCafe.equals("negro")) {
-                if(getCafe().getNegro().getCantidadDisponible() > 0){
-                registrarOrden(nuevaOrden);
-                getCafe().getNegro().PrepararCafe();
-                getAzucar().agregarCucharadas(cucharadasAzucar);
-                return true;
-                }else {
-                return false;
-                }
-            }
-            else {
-                if(getCafe().getDescafeinado().getCantidadDisponible() > 0){
-                    registrarOrden(nuevaOrden);
-                    getCafe().getDescafeinado().PrepararCafe();
-                    getAzucar().agregarCucharadas(cucharadasAzucar);
-                    return true;
-                }else {
-                    return false;
-                }
+            switch (tipoCafe) {
+                case "capuccino":
+                    if(getCafe().getCapuccino().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getCapuccino().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
+                case "negro":
+                    if(getCafe().getNegro().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getNegro().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
+                default:
+                    if(getCafe().getDescafeinado().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getDescafeinado().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
             }
         }
         else {
@@ -106,8 +107,6 @@ public class ControladorReportes {
     
     public String ObtenerReporteIngredientes(){       
         String reporteIngredientes;       
-        reporteIngredientes = cafe.toString() + azucar.toString(); 
-        
-        return reporteIngredientes;
+        return reporteIngredientes=cafe.toString() + azucar.toString();
     }   
 }

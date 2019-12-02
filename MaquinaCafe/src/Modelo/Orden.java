@@ -89,8 +89,8 @@ public class Orden {
     }
 
    public double devolverCambio(){
-       double cambio = dineroIngresado - costoOrden;
-       return cambio;
+       double cambio;
+       return cambio = dineroIngresado - costoOrden;
    }
 
     @Override
