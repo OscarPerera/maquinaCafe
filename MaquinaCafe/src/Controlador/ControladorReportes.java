@@ -14,9 +14,9 @@ import java.util.Iterator;
  * @author zeusj
  */
 public class ControladorReportes {
-    ArrayList<Orden> ListaOrdenes = new ArrayList<>();
-    Cafe cafe;
-    Azucar azucar;
+    private Cafe cafe;
+    private Azucar azucar;
+    private ArrayList<Orden> ListaOrdenes = new ArrayList<>();
 
     public ControladorReportes() {
         Capsula descafeinado = new Capsula(10);
@@ -43,41 +43,42 @@ public class ControladorReportes {
     }
     
     public boolean AgregarOrden(Orden nuevaOrden){
+        Orden newOrden=nuevaOrden;
         int cucharadasAzucar = nuevaOrden.getCucharadasAzucar();
+        String tipoCafe;
+        final int CANTIDAD_MINIMA=0;
+        
         if(getAzucar().getCantidadDisponible() >= cucharadasAzucar){
-            String tipoCafe = nuevaOrden.getTipoCafe();
-            if(tipoCafe.equals("capuccino") ){
-                if(getCafe().getCapuccino().getCantidadDisponible() > 0){
-                    registrarOrden(nuevaOrden);
-                    getCafe().getCapuccino().PrepararCafe();
-                    getAzucar().agregarCucharadas(cucharadasAzucar);
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            else if(tipoCafe.equals("negro")) {
-                    if(getCafe().getNegro().getCantidadDisponible() > 0){
-                    registrarOrden(nuevaOrden);
-                    getCafe().getNegro().PrepararCafe();
-                    getAzucar().agregarCucharadas(cucharadasAzucar);
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            }
-            else {
-                if(getCafe().getDescafeinado().getCantidadDisponible() > 0){
-                    registrarOrden(nuevaOrden);
-                    getCafe().getDescafeinado().PrepararCafe();
-                    getAzucar().agregarCucharadas(cucharadasAzucar);
-                    return true;
-                }
-                else {
-                    return false;
-                }
+            tipoCafe = newOrden.getTipoCafe();
+            
+            switch (tipoCafe) {
+                case "capuccino":
+                    if(getCafe().getCapuccino().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getCapuccino().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
+                case "negro":
+                    if(getCafe().getNegro().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getNegro().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
+                default:
+                    if(getCafe().getDescafeinado().getCantidadDisponible() > CANTIDAD_MINIMA){
+                        registrarOrden(newOrden);
+                        getCafe().getDescafeinado().PrepararCafe();
+                        getAzucar().agregarCucharadas(cucharadasAzucar);
+                        return true;
+                    }else {
+                        return false;
+                    }
             }
         }
         else {
@@ -90,20 +91,22 @@ public class ControladorReportes {
     }  
     
     public String ObtenerReporteOrdenes(){
-        String reporteOrdenes="";
         Iterator<Orden> ordenActual = ListaOrdenes.iterator();
         int indice = 1;
+        String reporteOrdenes="";
+        Orden ordenIndice;
+        
         while(ordenActual.hasNext()){
-            Orden ordenIndice = ordenActual.next();
-            reporteOrdenes = reporteOrdenes + "Orden " + indice + ordenIndice.toString()+  "\n";
+            ordenIndice = ordenActual.next();
+            reporteOrdenes = reporteOrdenes + "Orden " + indice 
+                    + ordenIndice.toString()+  "\n";
             indice++;
         }
         return reporteOrdenes;
-}
+    }
     
     public String ObtenerReporteIngredientes(){       
         String reporteIngredientes;       
-        reporteIngredientes = cafe.toString() + azucar.toString();      
-        return reporteIngredientes;
+        return reporteIngredientes=cafe.toString() + azucar.toString();
     }   
 }
