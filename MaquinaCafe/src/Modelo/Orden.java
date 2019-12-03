@@ -107,14 +107,15 @@ public class Orden {
      */
    public double devolverCambio(){
        double cambio;
-       return cambio = dineroIngresado - costoOrden;
+       cambio = dineroIngresado - costoOrden;
+       return cambio;
    }
 
     @Override
     public String toString() {
-        return "\nDinero Ingresado: " + dineroIngresado + " \n Costo de la Orden: " 
-                + costoOrden + "\n Tipo de Cafe: " + tipoCafe 
-                + "\n Cucharadas de Azucar: " + cucharadasAzucar + "\n Fecha: " 
-                + fecha + "\n Dinero de Cambio: " + dineroCambio  + "\n";
+        return "\nDinero Ingresado: " + dineroIngresado + "\nCosto de la Orden: " 
+                + costoOrden + "\nTipo de Cafe: " + tipoCafe 
+                + "\nCucharadas de Azucar: " + cucharadasAzucar + "\nFecha: " 
+                + fecha + "\nDinero de Cambio: " + dineroCambio  + "\n";
     }
 }

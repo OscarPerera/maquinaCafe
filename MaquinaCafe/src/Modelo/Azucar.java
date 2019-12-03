@@ -33,7 +33,7 @@ public class Azucar extends Ingrediente{
 
     @Override
     public String toString() {
-        return "Azucar: \n " + super.toString(); 
+        return "Azucar: \n" + super.toString(); 
     //To change body of generated methods, choose Tools | Templates.
     }
 }

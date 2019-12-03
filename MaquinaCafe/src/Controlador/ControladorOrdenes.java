@@ -55,7 +55,7 @@ public class ControladorOrdenes {
                 }
             }
             else{
-                return "Error: Dinero ingresado es insuficiente, como tu calificación";
+                return "Error: Dinero ingresado es insuficiente";
             }   
         }
         else {
@@ -144,7 +144,7 @@ public class ControladorOrdenes {
      * @return String con el reporte de los diferentes cambios devueltos
      */
     public String obtenerReporteCambio(){
-        return "Cambio Inicial: \n" + cambio.setCambioInicialToString()
+        return "Cambio Inicial: \n" + cambio.cambioInicialToString()
                 + "\nCambioDisponible: \n" + cambio.toString();        
     }
 }
