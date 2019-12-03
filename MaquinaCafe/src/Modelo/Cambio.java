@@ -101,7 +101,7 @@ public class Cambio {
      * @return Cadena que representa la cantidad de monedas de cada denominación
      * iniciales
      */
-    public String setCambioInicialToString() {
+    public String cambioInicialToString() {
         String respuesta = "";
         
         if(MONEDAS_PESO_INICIALES > 0){
