@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package Controlador;
-    
+
 import Modelo.Cambio;
 import Vista.Index;
 
 /**
  * Clase encargada de la ejecucion del programa y los valores iniciales de algunas clases
- * @author Equipo Guadalupe,Jorge,Oscar,Riad,Zeus
+ * @author Equipo Guadalupe,Jorge,Oscar,Riad, Zeus
  * @version 1.0
  * @since 2019-12-01
  */

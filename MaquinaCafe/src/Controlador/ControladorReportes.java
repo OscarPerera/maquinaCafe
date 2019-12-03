@@ -110,7 +110,7 @@ public class ControladorReportes {
     public String ObtenerReporteOrdenes(){
         Iterator<Orden> ordenActual = ListaOrdenes.iterator();
         int indice = 1;
-        String reporteOrdenes="";
+        String reporteOrdenes = "";
         Orden ordenIndice;
         
         while(ordenActual.hasNext()){
@@ -127,6 +127,7 @@ public class ControladorReportes {
      */
     public String ObtenerReporteIngredientes(){       
         String reporteIngredientes;       
-        return reporteIngredientes=cafe.toString() + azucar.toString();
+        reporteIngredientes = cafe.toString() + azucar.toString();
+        return reporteIngredientes;
     }   
 }
